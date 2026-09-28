@@ -13,7 +13,9 @@ html {
 body {
   background: #ffffff;
   color: #0d0d0d;
+
   font-family: "Roboto", "Noto Sans KR", sans-serif;
+
   overflow-x: hidden;
 }
 
@@ -24,14 +26,11 @@ a {
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header {
   position: sticky;
   top: 0;
-  z-index: 1000;
 
   width: 100%;
   height: 187px;
@@ -39,6 +38,8 @@ a {
   background: #ffffff;
 
   border-bottom: 0.5px solid #0d0d0d;
+
+  z-index: 1000;
 }
 
 
@@ -54,9 +55,7 @@ a {
 }
 
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo {
   width: 115px;
@@ -73,7 +72,10 @@ a {
 .logo-top {
   display: flex;
   align-items: flex-end;
+}
 
+
+.logo-be {
   font-size: 35px;
   font-weight: 600;
 }
@@ -105,9 +107,7 @@ a {
 }
 
 
-/* =========================
-   NAV
-========================= */
+/* NAVIGATION */
 
 .nav {
   display: flex;
@@ -121,14 +121,10 @@ a {
   display: grid;
 
   font-size: 18px;
+
   white-space: nowrap;
 }
 
-
-/*
-Bold가 되었을 때 글씨 위치가
-움직이지 않도록 공간 미리 확보
-*/
 
 .nav-link::after {
   content: attr(data-text);
@@ -158,13 +154,10 @@ Bold가 되었을 때 글씨 위치가
 
 .divider {
   font-size: 18px;
-  font-weight: 400;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
   width: 100%;
@@ -200,18 +193,16 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   BADGE
-========================= */
+/* BADGE */
 
 .badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 5px 15px;
-
   min-height: 30px;
+
+  padding: 5px 15px;
 
   background: #0d0d0d;
   color: #ffffff;
@@ -227,9 +218,7 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   TITLE
-========================= */
+/* TITLE */
 
 .title-group {
   display: flex;
@@ -280,9 +269,7 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   HERO IMAGE
-========================= */
+/* HERO IMAGE */
 
 .hero-image {
   flex: 0 0 314px;
@@ -293,22 +280,10 @@ Bold가 되었을 때 글씨 위치가
   background: #d9d9d9;
 
   border-radius: 15px;
-
-  overflow: hidden;
 }
 
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-
-/* =========================
-   PORTFOLIO
-========================= */
+/* PORTFOLIO */
 
 .portfolio {
   width: 100%;
@@ -328,6 +303,7 @@ Bold가 되었을 때 글씨 위치가
   width: 100%;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 40px;
@@ -345,9 +321,7 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact {
   min-height: 700px;
@@ -362,9 +336,7 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   SCROLL 위치
-========================= */
+/* HEADER 높이만큼 스크롤 위치 보정 */
 
 #about,
 #portfolio,
@@ -373,9 +345,7 @@ Bold가 되었을 때 글씨 위치가
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media (max-width: 1200px) {
 
@@ -439,10 +409,10 @@ Bold가 되었을 때 글씨 위치가
 
 
   .hero-image {
+    flex: none;
+
     width: 100%;
     max-width: 420px;
-
-    flex: none;
   }
 
 
