@@ -1,20 +1,16 @@
-/* css/style.css */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-
   background-color: #FFFFFF;
   color: #1A1A1A;
 
@@ -29,9 +25,6 @@ a {
   text-decoration: none;
 }
 
-
-/* HEADER */
-
 .site-header {
   width: 100%;
 
@@ -39,14 +32,12 @@ a {
   padding-bottom: 50px;
 }
 
-
-/* LOGO + MENU */
-
 .header-inner {
   width: 1140px;
   max-width: calc(100% - 80px);
 
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 
   padding-top: 20px;
   padding-bottom: 20px;
@@ -56,9 +47,6 @@ a {
   align-items: flex-end;
 }
 
-
-/* LOGO */
-
 .logo {
   display: flex;
   flex-direction: column;
@@ -67,7 +55,6 @@ a {
   color: #1A1A1A;
 
   font-family: "Roboto", sans-serif;
-
   line-height: 1;
 }
 
@@ -97,9 +84,6 @@ a {
   font-weight: 500;
 }
 
-
-/* MENU */
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -115,7 +99,6 @@ a {
   font-weight: 400;
 
   line-height: 1;
-
   white-space: nowrap;
 }
 
@@ -123,18 +106,12 @@ a {
   font-weight: 500;
 }
 
-
-/* LINE */
-
 .header-divider {
   width: 100%;
   height: 0.5px;
 
   background-color: #808080;
 }
-
-
-/* MAIN */
 
 .site-main {
   width: 100%;
