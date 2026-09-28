@@ -1,13 +1,4 @@
-
-/* =========================================================
-   BE HYEON PORTFOLIO
-   STYLE.CSS
-========================================================= */
-
-
-/* =========================================================
-   01. RESET
-========================================================= */
+/* css/style.css */
 
 *,
 *::before,
@@ -18,14 +9,13 @@
 html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   padding: 0;
 
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #1A1A1A;
 
   font-family: "Roboto", sans-serif;
@@ -39,30 +29,8 @@ a {
   text-decoration: none;
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-
-
-/* =========================================================
-   02. HEADER
-========================================================= */
-
-/*
-  HEADER 전체
-
-  상단 Padding: 50px
-  하단 Padding: 50px
-*/
+/* HEADER */
 
 .site-header {
   width: 100%;
@@ -72,331 +40,102 @@ img {
 }
 
 
-
-/* =========================================================
-   03. HEADER INNER
-========================================================= */
-
-/*
-  Logo + Menu 묶음
-
-  Width: 1140px
-
-  정렬:
-  Logo = Left
-  Menu = Right
-
-  Vertical Align:
-  Bottom
-
-  Vertical Padding:
-  20px
-*/
+/* LOGO + MENU */
 
 .header-inner {
   width: 1140px;
   max-width: calc(100% - 80px);
 
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 
   padding-top: 20px;
   padding-bottom: 20px;
 
   display: flex;
-
-  flex-direction: row;
-
   justify-content: space-between;
-
   align-items: flex-end;
 }
 
 
-
-/* =========================================================
-   04. LOGO
-========================================================= */
-
-/*
-  BE
-  Roboto
-  SemiBold
-  30px
-
-  HYEON
-  Roboto
-  Regular
-  30px
-
-  Gap:
-  -5px
-
-  Color:
-  #1A1A1A
-*/
+/* LOGO */
 
 .logo {
-  display: inline-flex;
-
+  display: flex;
   flex-direction: column;
-
   align-items: flex-start;
-
-  justify-content: flex-start;
 
   color: #1A1A1A;
 
   font-family: "Roboto", sans-serif;
 
   line-height: 1;
-
-  cursor: pointer;
 }
-
-
-
-/* BE */
 
 .logo__be {
   display: block;
 
-  margin: 0;
-  padding: 0;
-
-  font-family: "Roboto", sans-serif;
-
   font-size: 30px;
-
   font-weight: 600;
-
   line-height: 1;
 }
-
-
-
-/* HYEON */
 
 .logo__hyeon {
   display: block;
 
-  margin: 0;
-
   margin-top: -5px;
 
-  padding: 0;
-
-  font-family: "Roboto", sans-serif;
-
   font-size: 30px;
-
   font-weight: 400;
-
   line-height: 1;
 }
 
-
-
-/* =========================================================
-   05. LOGO HOVER
-========================================================= */
-
-/*
-  Logo 전체에 Hover했을 때
-
-  BE:
-  SemiBold 600
-  →
-  Bold 700
-
-  HYEON:
-  Regular 400
-  →
-  Medium 500
-
-  두 텍스트가 동시에 변경
-*/
-
-.logo:hover .logo__be,
-.logo:focus-visible .logo__be {
+.logo:hover .logo__be {
   font-weight: 700;
 }
 
-.logo:hover .logo__hyeon,
-.logo:focus-visible .logo__hyeon {
+.logo:hover .logo__hyeon {
   font-weight: 500;
 }
 
 
-
-/* =========================================================
-   06. MAIN NAVIGATION
-========================================================= */
-
-/*
-  About me
-  Portfolio
-  Contact ME
-
-  Roboto
-  Regular
-  15px
-
-  Gap:
-  50px
-
-  Color:
-  #1A1A1A
-*/
+/* MENU */
 
 .main-nav {
   display: flex;
-
-  flex-direction: row;
-
   align-items: center;
-
-  justify-content: flex-end;
 
   gap: 50px;
 }
 
-
-
-/* =========================================================
-   07. NAVIGATION LINK
-========================================================= */
-
 .main-nav__link {
-  display: inline-block;
-
-  margin: 0;
-  padding: 0;
-
   color: #1A1A1A;
 
   font-family: "Roboto", sans-serif;
-
   font-size: 15px;
-
   font-weight: 400;
 
   line-height: 1;
 
   white-space: nowrap;
-
-  cursor: pointer;
 }
 
-
-
-/* =========================================================
-   08. NAVIGATION HOVER
-========================================================= */
-
-/*
-  Regular
-  →
-  Medium
-*/
-
-.main-nav__link:hover,
-.main-nav__link:focus-visible {
+.main-nav__link:hover {
   font-weight: 500;
 }
 
 
-
-/* =========================================================
-   09. HEADER DIVIDER
-========================================================= */
-
-/*
-  페이지 전체 Width
-
-  Thickness:
-  0.5px
-
-  Color:
-  #808080
-*/
+/* LINE */
 
 .header-divider {
   width: 100%;
-
   height: 0.5px;
-
-  margin: 0;
-
-  padding: 0;
 
   background-color: #808080;
 }
 
 
-
-/* =========================================================
-   10. MAIN
-========================================================= */
-
-/*
-  앞으로 Hero,
-  Portfolio,
-  About,
-  Contact 등이 들어갈 영역
-*/
+/* MAIN */
 
 .site-main {
   width: 100%;
 }
-
-
-
-/* =========================================================
-   11. ACCESSIBILITY
-========================================================= */
-
-.logo:focus-visible,
-.main-nav__link:focus-visible {
-  outline: 1px solid #1A1A1A;
-
-  outline-offset: 5px;
-}
-
-
-
-/* =========================================================
-   12. RESPONSIVE
-========================================================= */
-
-/*
-  현재 데스크톱 디자인의 기준값은
-  다현님이 지정한 1140px을 그대로 사용합니다.
-
-  화면이 1140px보다 작아질 경우에만
-  화면 밖으로 잘리지 않도록
-  최소한의 안전 여백을 적용합니다.
-*/
-
-@media (max-width: 1199px) {
-
-  .header-inner {
-    width: auto;
-
-    max-width: none;
-
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-}
-
-
-/*
-  모바일 디자인은 아직 Figma에서
-  별도로 지정되지 않았기 때문에
-  임의로 디자인을 변경하지 않습니다.
-
-  추후 모바일 Figma 값이 정해지면
-  이 부분을 정확한 값으로 제작합니다.
-*/
