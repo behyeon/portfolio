@@ -1,15 +1,11 @@
-/* css/style.css */
+/* ======================================
+   RESET
+====================================== */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -17,16 +13,17 @@ html {
 }
 
 body {
-  width: 100%;
+  margin: 0;
+
+  background: #ffffff;
+  color: #0d0d0d;
+
+  font-family:
+    "Roboto",
+    "Noto Sans KR",
+    sans-serif;
+
   overflow-x: hidden;
-
-  background-color: #FFFFFF;
-  color: #1A1A1A;
-
-  font-family: "Roboto", sans-serif;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -34,308 +31,820 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
 
-/* =========================
+
+
+/* ======================================
+   VARIABLES
+====================================== */
+
+:root {
+
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gray: #d9d9d9;
+
+  --page-padding: 150px;
+
+  --header-height: 187px;
+
+}
+
+
+
+/* ======================================
    HEADER
-========================= */
+
+   핵심:
+   sticky 상태로 상단에 계속 고정됩니다.
+
+   아래 콘텐츠는 header 뒤쪽으로 지나가지만,
+   Header 배경이 흰색이라
+   하단 구분선 밑에서 사라지는 것처럼 보입니다.
+====================================== */
 
 .site-header {
-  width: 100%;
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: var(--header-height);
+
+  background: #ffffff;
+
+  z-index: 1000;
+
+  border-bottom:
+    0.5px solid #0d0d0d;
+
 }
 
 
-/* =========================
-   HEADER INNER
-========================= */
 
 .header-inner {
-  width: 1140px;
-  max-width: calc(100% - 80px);
 
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding:
+    80px
+    var(--page-padding)
+    15px;
 
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
+
 }
 
 
-/* =========================
+
+/* ======================================
    LOGO
-========================= */
+====================================== */
 
 .logo {
+
+  width: 115px;
+  height: 77px;
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 
-  flex-shrink: 0;
+  justify-content: center;
 
-  color: #1A1A1A;
+  color: #0d0d0d;
+
+  line-height: 0.82;
+
+}
+
+
+
+.logo-top {
+
+  display: flex;
+  align-items: flex-end;
+
+}
+
+
+
+.logo-be {
 
   font-family: "Roboto", sans-serif;
-  line-height: 1;
-}
 
-.logo__be {
-  display: block;
-
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
-  line-height: 1;
+
+  letter-spacing: -1.5px;
+
 }
 
-.logo__hyeon {
-  display: block;
 
-  margin-top: -5px;
 
-  font-size: 30px;
+.logo-line {
+
+  width: 47px;
+  height: 2px;
+
+  background: #0d0d0d;
+
+  margin-left: 4px;
+  margin-bottom: 5px;
+
+}
+
+
+
+.logo-bottom {
+
+  font-family: "Roboto", sans-serif;
+
+  font-size: 35px;
   font-weight: 400;
-  line-height: 1;
+
+  letter-spacing: -1.8px;
+
+  margin-top: -1px;
+
 }
 
 
-/* =========================
-   LOGO HOVER
-========================= */
 
-.logo:hover .logo__be {
-  font-weight: 700;
-}
-
-.logo:hover .logo__hyeon {
-  font-weight: 500;
-}
-
-
-/* =========================
+/* ======================================
    NAVIGATION
-========================= */
+====================================== */
 
-.main-nav {
+.navigation {
+
   display: flex;
   align-items: center;
 
-  gap: 50px;
+  gap: 30px;
+
+  height: 41px;
+
+  padding:
+    10px
+    0;
+
 }
 
-.main-nav__link {
-  display: inline-flex;
-  align-items: center;
 
-  flex-shrink: 0;
 
-  color: #1A1A1A;
+/*
+  메뉴에 font-weight만 바꾸면
+  Bold의 글자 폭 때문에 양옆이 조금 움직일 수 있습니다.
+
+  그래서 grid를 이용해
+  Bold 글씨 폭까지 공간을 미리 확보합니다.
+*/
+
+.nav-link {
+
+  display: grid;
 
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 18px;
 
-  line-height: 1;
+  line-height: 21px;
 
   white-space: nowrap;
 
-  transition: font-weight 0.15s ease;
 }
 
 
-/* About me / Portfolio 중앙 정렬 고정 */
 
-.main-nav__link:nth-child(1),
-.main-nav__link:nth-child(2) {
-  justify-content: center;
-  text-align: center;
-}
+/*
+  숨겨진 Bold 글자를 하나 만들어서
+  처음부터 Bold 기준 너비를 확보합니다.
+*/
 
+.nav-link::after {
 
-/* =========================
-   NAVIGATION HOVER
-========================= */
-
-.main-nav__link:hover {
-  font-weight: 500;
-}
-
-
-/* Hover 시 글씨 이동 방지 */
-
-.main-nav__link::after {
   content: attr(data-text);
 
-  height: 0;
+  grid-area: 1 / 1;
 
-  overflow: hidden;
+  font-weight: 700;
 
   visibility: hidden;
 
   pointer-events: none;
 
-  user-select: none;
+}
+
+
+
+.nav-link span {
+
+  grid-area: 1 / 1;
+
+  font-weight: 400;
+
+  transition:
+    font-weight 0.15s ease;
+
+}
+
+
+
+/* 기본 활성 메뉴 */
+
+.nav-link.active span {
+
+  font-weight: 700;
+
+}
+
+
+
+/* Hover */
+
+.nav-link:hover span {
+
+  font-weight: 700;
+
+}
+
+
+
+/* divider */
+
+.nav-divider {
+
+  font-family: "Roboto", sans-serif;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #0d0d0d;
+
+}
+
+
+
+/* ======================================
+   HERO
+====================================== */
+
+.hero-section {
+
+  width: 100%;
+
+  background: #ffffff;
+
+}
+
+
+
+.hero-inner {
+
+  width: 100%;
+
+  min-height: 845px;
+
+  padding:
+    200px
+    var(--page-padding);
+
+  display: flex;
+
+  gap: 40px;
+
+  align-items: flex-start;
+
+}
+
+
+
+/* ======================================
+   HERO LEFT
+====================================== */
+
+.hero-content {
+
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 445px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  gap: 50px;
+
+}
+
+
+
+.hero-top {
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 25px;
+
+}
+
+
+
+/* ======================================
+   BADGE
+====================================== */
+
+.section-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding:
+    5px
+    15px;
+
+  background: #0d0d0d;
+
+  color: #ffffff;
+
+  border-radius: 50px;
+
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 20px;
+
+  white-space: nowrap;
+
+}
+
+
+
+/* ======================================
+   TITLE
+====================================== */
+
+.hero-title-group {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+
+.hero-title-group h1 {
+
+  font-family:
+    "Roboto",
+    sans-serif;
+
+  font-size: 40px;
+  font-weight: 600;
+
+  line-height: 45px;
+
+  letter-spacing: -1px;
+
+}
+
+
+
+.hero-subtitle {
+
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 25px;
+  font-weight: 400;
+
+  line-height: 40px;
+
+  letter-spacing: -0.5px;
+
+}
+
+
+
+.hero-subtitle strong {
 
   font-weight: 500;
+
 }
 
 
-/* =========================
-   DIVIDER
-========================= */
 
-.header-divider {
+/* ======================================
+   BODY TEXT
+====================================== */
+
+.hero-description {
+
   width: 100%;
-  height: 0.5px;
 
-  background-color: #808080;
+  max-width: 786px;
+
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 27px;
+
+  letter-spacing: -0.25px;
+
+  word-break: keep-all;
+
 }
 
 
-/* =========================
-   MAIN
-========================= */
 
-.site-main {
+/* ======================================
+   HERO IMAGE
+====================================== */
+
+.hero-image {
+
+  flex: 0 0 314px;
+
+  width: 314px;
+  height: 445px;
+
+  background: #d9d9d9;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+}
+
+
+
+.hero-image img {
+
   width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
 }
 
 
-/* =========================
-   TABLET
-========================= */
 
-@media (max-width: 1199px) {
+/* ======================================
+   PORTFOLIO SECTION
+====================================== */
+
+.portfolio-section {
+
+  width: 100%;
+
+  background: #ffffff;
+
+}
+
+
+
+.portfolio-inner {
+
+  width: 100%;
+
+  min-height: 652px;
+
+  padding:
+    150px
+    var(--page-padding);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 50px;
+
+}
+
+
+
+/* ======================================
+   PORTFOLIO GRID
+====================================== */
+
+.portfolio-grid {
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 40px;
+
+}
+
+
+
+.portfolio-card {
+
+  width: 100%;
+
+  aspect-ratio:
+    354 / 272;
+
+  background: #d9d9d9;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+}
+
+
+
+/* 카드에 이미지 추가했을 경우 */
+
+.portfolio-card img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
+
+/* ======================================
+   CONTACT
+   현재는 스크롤 동작 확인용
+====================================== */
+
+.contact-section {
+
+  width: 100%;
+
+  min-height: 700px;
+
+  padding:
+    150px
+    var(--page-padding);
+
+  background: #ffffff;
+
+}
+
+
+
+.contact-inner {
+
+  width: 100%;
+
+}
+
+
+
+.contact-inner h2 {
+
+  font-family: "Roboto", sans-serif;
+
+  font-size: 40px;
+  font-weight: 600;
+
+}
+
+
+
+/* ======================================
+   ANCHOR SCROLL OFFSET
+
+   메뉴 클릭 시 Header에 내용이 가려지지 않게
+====================================== */
+
+#about,
+#portfolio,
+#contact {
+
+  scroll-margin-top:
+    var(--header-height);
+
+}
+
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 1200px) {
+
+  :root {
+    --page-padding: 80px;
+  }
+
+}
+
+
+
+@media (max-width: 900px) {
+
+  :root {
+
+    --page-padding: 40px;
+    --header-height: 140px;
+
+  }
+
 
   .site-header {
-    padding-top: 40px;
-    padding-bottom: 40px;
+
+    height: var(--header-height);
+
   }
+
 
   .header-inner {
-    width: auto;
-    max-width: none;
 
-    margin-left: 40px;
-    margin-right: 40px;
+    padding:
+      45px
+      var(--page-padding)
+      15px;
 
-    padding-top: 18px;
-    padding-bottom: 18px;
   }
 
-  .logo__be,
-  .logo__hyeon {
-    font-size: 26px;
+
+  .logo {
+
+    transform: scale(0.8);
+    transform-origin: left center;
+
   }
 
-  .logo__hyeon {
-    margin-top: -4px;
+
+  .navigation {
+
+    gap: 18px;
+
   }
 
-  .main-nav {
-    gap: 32px;
+
+  .nav-link,
+  .nav-divider {
+
+    font-size: 15px;
+
   }
 
-  .main-nav__link {
-    font-size: 14px;
-  }
 
-}
+  .hero-inner {
 
+    min-height: auto;
 
-/* =========================
-   MOBILE
-========================= */
+    padding:
+      120px
+      var(--page-padding);
 
-@media (max-width: 767px) {
-
-  .site-header {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  .header-inner {
-    width: auto;
-    max-width: none;
-
-    margin-left: 24px;
-    margin-right: 24px;
-
-    padding-top: 16px;
-    padding-bottom: 16px;
-
-    display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
   }
 
-  .logo__be,
-  .logo__hyeon {
-    font-size: 24px;
-  }
 
-  .logo__hyeon {
-    margin-top: -4px;
-  }
+  .hero-image {
 
-  .main-nav {
+    flex: none;
+
     width: 100%;
+    height: auto;
 
-    margin-top: 28px;
+    aspect-ratio: 314 / 445;
 
-    display: flex;
+    max-width: 420px;
 
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 0;
   }
 
-  .main-nav__link {
-    font-size: 13px;
+
+  .portfolio-inner {
+
+    padding:
+      120px
+      var(--page-padding);
+
+  }
+
+
+  .portfolio-grid {
+
+    grid-template-columns: 1fr;
+
   }
 
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
-  .site-header {
-    padding-top: 24px;
-    padding-bottom: 24px;
+  :root {
+
+    --page-padding: 24px;
+    --header-height: 115px;
+
   }
+
 
   .header-inner {
-    margin-left: 20px;
-    margin-right: 20px;
 
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 28px;
+
   }
 
-  .logo__be,
-  .logo__hyeon {
-    font-size: 22px;
+
+  .logo {
+
+    transform: scale(0.65);
+
+    width: 80px;
+
   }
 
-  .logo__hyeon {
-    margin-top: -3px;
+
+  .navigation {
+
+    gap: 10px;
+
   }
 
-  .main-nav {
-    margin-top: 24px;
-  }
 
-  .main-nav__link {
+  .nav-link,
+  .nav-divider {
+
     font-size: 12px;
+
+  }
+
+
+  .hero-inner {
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+  }
+
+
+  .hero-title-group h1 {
+
+    font-size: 32px;
+    line-height: 38px;
+
+  }
+
+
+  .hero-subtitle {
+
+    font-size: 20px;
+    line-height: 32px;
+
+  }
+
+
+  .hero-description {
+
+    font-size: 14px;
+    line-height: 25px;
+
+  }
+
+
+  .portfolio-inner {
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+
   }
 
 }
