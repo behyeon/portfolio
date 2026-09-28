@@ -1,233 +1,136 @@
-/* ======================================
-   RESET
-====================================== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
 
+body {
   background: #ffffff;
   color: #0d0d0d;
-
-  font-family:
-    "Roboto",
-    "Noto Sans KR",
-    sans-serif;
-
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
   overflow-x: hidden;
 }
+
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-img {
-  display: block;
-  width: 100%;
-}
 
-
-
-/* ======================================
-   VARIABLES
-====================================== */
-
-:root {
-
-  --black: #0d0d0d;
-  --white: #ffffff;
-  --gray: #d9d9d9;
-
-  --page-padding: 150px;
-
-  --header-height: 187px;
-
-}
-
-
-
-/* ======================================
+/* =========================
    HEADER
+========================= */
 
-   핵심:
-   sticky 상태로 상단에 계속 고정됩니다.
-
-   아래 콘텐츠는 header 뒤쪽으로 지나가지만,
-   Header 배경이 흰색이라
-   하단 구분선 밑에서 사라지는 것처럼 보입니다.
-====================================== */
-
-.site-header {
-
+.header {
   position: sticky;
   top: 0;
+  z-index: 1000;
 
   width: 100%;
-  height: var(--header-height);
+  height: 187px;
 
   background: #ffffff;
 
-  z-index: 1000;
-
-  border-bottom:
-    0.5px solid #0d0d0d;
-
+  border-bottom: 0.5px solid #0d0d0d;
 }
-
 
 
 .header-inner {
-
   width: 100%;
   height: 100%;
 
-  padding:
-    80px
-    var(--page-padding)
-    15px;
+  padding: 80px 150px 15px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
+  align-items: center;
 }
 
 
-
-/* ======================================
+/* =========================
    LOGO
-====================================== */
+========================= */
 
 .logo {
-
   width: 115px;
   height: 77px;
 
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 
-  color: #0d0d0d;
-
   line-height: 0.82;
-
 }
-
 
 
 .logo-top {
-
   display: flex;
   align-items: flex-end;
 
-}
-
-
-
-.logo-be {
-
-  font-family: "Roboto", sans-serif;
-
   font-size: 35px;
   font-weight: 600;
-
-  letter-spacing: -1.5px;
-
 }
-
 
 
 .logo-line {
-
   width: 47px;
   height: 2px;
-
-  background: #0d0d0d;
 
   margin-left: 4px;
   margin-bottom: 5px;
 
+  background: #0d0d0d;
 }
 
 
-
 .logo-bottom {
-
-  font-family: "Roboto", sans-serif;
+  margin-top: -1px;
 
   font-size: 35px;
   font-weight: 400;
 
-  letter-spacing: -1.8px;
-
-  margin-top: -1px;
-
+  transition: font-weight 0.15s ease;
 }
 
 
+.logo:hover .logo-bottom {
+  font-weight: 500;
+}
 
-/* ======================================
-   NAVIGATION
-====================================== */
 
-.navigation {
+/* =========================
+   NAV
+========================= */
 
+.nav {
   display: flex;
   align-items: center;
 
   gap: 30px;
-
-  height: 41px;
-
-  padding:
-    10px
-    0;
-
 }
 
-
-
-/*
-  메뉴에 font-weight만 바꾸면
-  Bold의 글자 폭 때문에 양옆이 조금 움직일 수 있습니다.
-
-  그래서 grid를 이용해
-  Bold 글씨 폭까지 공간을 미리 확보합니다.
-*/
 
 .nav-link {
-
   display: grid;
 
-  font-family: "Roboto", sans-serif;
   font-size: 18px;
-
-  line-height: 21px;
-
   white-space: nowrap;
-
 }
 
 
-
 /*
-  숨겨진 Bold 글자를 하나 만들어서
-  처음부터 Bold 기준 너비를 확보합니다.
+Bold가 되었을 때 글씨 위치가
+움직이지 않도록 공간 미리 확보
 */
 
 .nav-link::after {
-
   content: attr(data-text);
 
   grid-area: 1 / 1;
@@ -235,259 +138,153 @@ img {
   font-weight: 700;
 
   visibility: hidden;
-
-  pointer-events: none;
-
 }
 
 
-
 .nav-link span {
-
   grid-area: 1 / 1;
 
   font-weight: 400;
 
-  transition:
-    font-weight 0.15s ease;
-
+  transition: font-weight 0.15s ease;
 }
 
 
-
-/* 기본 활성 메뉴 */
-
+.nav-link:hover span,
 .nav-link.active span {
-
   font-weight: 700;
-
 }
 
 
-
-/* Hover */
-
-.nav-link:hover span {
-
-  font-weight: 700;
-
-}
-
-
-
-/* divider */
-
-.nav-divider {
-
-  font-family: "Roboto", sans-serif;
-
+.divider {
   font-size: 18px;
   font-weight: 400;
-
-  color: #0d0d0d;
-
 }
 
 
-
-/* ======================================
+/* =========================
    HERO
-====================================== */
+========================= */
 
-.hero-section {
-
+.hero {
   width: 100%;
-
-  background: #ffffff;
-
-}
-
-
-
-.hero-inner {
-
-  width: 100%;
-
   min-height: 845px;
 
-  padding:
-    200px
-    var(--page-padding);
+  padding: 200px 150px;
 
   display: flex;
-
-  gap: 40px;
-
   align-items: flex-start;
 
+  gap: 40px;
 }
 
 
-
-/* ======================================
-   HERO LEFT
-====================================== */
-
-.hero-content {
-
+.hero-text {
   flex: 1;
 
   min-width: 0;
 
-  min-height: 445px;
-
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start;
-
   gap: 50px;
-
 }
 
 
-
-.hero-top {
-
+.hero-heading {
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 
   gap: 25px;
-
 }
 
 
-
-/* ======================================
+/* =========================
    BADGE
-====================================== */
+========================= */
 
-.section-badge {
-
+.badge {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
+  padding: 5px 15px;
+
   min-height: 30px;
 
-  padding:
-    5px
-    15px;
-
   background: #0d0d0d;
-
   color: #ffffff;
 
   border-radius: 50px;
 
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 15px;
   font-weight: 600;
 
-  line-height: 20px;
-
   white-space: nowrap;
-
 }
 
 
-
-/* ======================================
+/* =========================
    TITLE
-====================================== */
+========================= */
 
-.hero-title-group {
-
+.title-group {
   display: flex;
   flex-direction: column;
 
   gap: 10px;
-
 }
 
 
-
-.hero-title-group h1 {
-
-  font-family:
-    "Roboto",
-    sans-serif;
+.title-group h1 {
+  font-family: "Roboto", sans-serif;
 
   font-size: 40px;
   font-weight: 600;
 
   line-height: 45px;
-
-  letter-spacing: -1px;
-
 }
 
 
-
-.hero-subtitle {
-
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+.subtitle {
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 25px;
   font-weight: 400;
 
   line-height: 40px;
 
-  letter-spacing: -0.5px;
-
+  word-break: keep-all;
 }
 
 
-
-.hero-subtitle strong {
-
+.subtitle strong {
   font-weight: 500;
-
 }
 
 
-
-/* ======================================
-   BODY TEXT
-====================================== */
-
-.hero-description {
-
-  width: 100%;
-
+.description {
   max-width: 786px;
 
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 15px;
   font-weight: 400;
 
   line-height: 27px;
 
-  letter-spacing: -0.25px;
-
   word-break: keep-all;
-
 }
 
 
-
-/* ======================================
+/* =========================
    HERO IMAGE
-====================================== */
+========================= */
 
 .hero-image {
-
   flex: 0 0 314px;
 
   width: 314px;
@@ -498,353 +295,248 @@ img {
   border-radius: 15px;
 
   overflow: hidden;
-
 }
 
 
-
 .hero-image img {
-
   width: 100%;
   height: 100%;
 
   object-fit: cover;
-
 }
 
 
+/* =========================
+   PORTFOLIO
+========================= */
 
-/* ======================================
-   PORTFOLIO SECTION
-====================================== */
-
-.portfolio-section {
-
+.portfolio {
   width: 100%;
-
-  background: #ffffff;
-
-}
-
-
-
-.portfolio-inner {
-
-  width: 100%;
-
   min-height: 652px;
 
-  padding:
-    150px
-    var(--page-padding);
+  padding: 150px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
   gap: 50px;
-
 }
 
 
-
-/* ======================================
-   PORTFOLIO GRID
-====================================== */
-
 .portfolio-grid {
-
   width: 100%;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 40px;
-
 }
 
 
-
 .portfolio-card {
-
   width: 100%;
 
-  aspect-ratio:
-    354 / 272;
+  aspect-ratio: 354 / 272;
 
   background: #d9d9d9;
 
   border-radius: 15px;
-
-  overflow: hidden;
-
-  cursor: pointer;
-
 }
 
 
-
-/* 카드에 이미지 추가했을 경우 */
-
-.portfolio-card img {
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-}
-
-
-
-/* ======================================
+/* =========================
    CONTACT
-   현재는 스크롤 동작 확인용
-====================================== */
+========================= */
 
-.contact-section {
-
-  width: 100%;
-
+.contact {
   min-height: 700px;
 
-  padding:
-    150px
-    var(--page-padding);
-
-  background: #ffffff;
-
+  padding: 150px;
 }
 
 
-
-.contact-inner {
-
-  width: 100%;
-
-}
-
-
-
-.contact-inner h2 {
-
-  font-family: "Roboto", sans-serif;
-
+.contact h2 {
   font-size: 40px;
   font-weight: 600;
-
 }
 
 
-
-/* ======================================
-   ANCHOR SCROLL OFFSET
-
-   메뉴 클릭 시 Header에 내용이 가려지지 않게
-====================================== */
+/* =========================
+   SCROLL 위치
+========================= */
 
 #about,
 #portfolio,
 #contact {
-
-  scroll-margin-top:
-    var(--header-height);
-
+  scroll-margin-top: 187px;
 }
 
 
-
-/* ======================================
+/* =========================
    RESPONSIVE
-====================================== */
+========================= */
 
 @media (max-width: 1200px) {
 
-  :root {
-    --page-padding: 80px;
+  .header-inner {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+
+  .hero {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+
+  .portfolio,
+  .contact {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 
 }
-
 
 
 @media (max-width: 900px) {
 
-  :root {
-
-    --page-padding: 40px;
-    --header-height: 140px;
-
-  }
-
-
-  .site-header {
-
-    height: var(--header-height);
-
+  .header {
+    height: 140px;
   }
 
 
   .header-inner {
-
-    padding:
-      45px
-      var(--page-padding)
-      15px;
-
+    padding: 45px 40px 15px;
   }
 
 
   .logo {
-
     transform: scale(0.8);
     transform-origin: left center;
-
   }
 
 
-  .navigation {
-
+  .nav {
     gap: 18px;
-
   }
 
 
   .nav-link,
-  .nav-divider {
-
+  .divider {
     font-size: 15px;
-
   }
 
 
-  .hero-inner {
-
+  .hero {
     min-height: auto;
 
-    padding:
-      120px
-      var(--page-padding);
+    padding: 120px 40px;
 
     flex-direction: column;
-
   }
 
 
   .hero-image {
-
-    flex: none;
-
     width: 100%;
-    height: auto;
-
-    aspect-ratio: 314 / 445;
-
     max-width: 420px;
 
+    flex: none;
   }
 
 
-  .portfolio-inner {
-
-    padding:
-      120px
-      var(--page-padding);
-
+  .portfolio {
+    padding: 120px 40px;
   }
 
 
   .portfolio-grid {
-
     grid-template-columns: 1fr;
+  }
 
+
+  .contact {
+    padding: 120px 40px;
+  }
+
+
+  #about,
+  #portfolio,
+  #contact {
+    scroll-margin-top: 140px;
   }
 
 }
 
 
-
 @media (max-width: 600px) {
 
-  :root {
-
-    --page-padding: 24px;
-    --header-height: 115px;
-
+  .header {
+    height: 115px;
   }
 
 
   .header-inner {
-
-    padding-top: 28px;
-
+    padding: 28px 24px 10px;
   }
 
 
   .logo {
+    width: 75px;
 
     transform: scale(0.65);
-
-    width: 80px;
-
   }
 
 
-  .navigation {
-
-    gap: 10px;
-
+  .nav {
+    gap: 9px;
   }
 
 
   .nav-link,
-  .nav-divider {
-
+  .divider {
     font-size: 12px;
-
   }
 
 
-  .hero-inner {
-
-    padding-top: 90px;
-    padding-bottom: 90px;
-
+  .hero {
+    padding: 90px 24px;
   }
 
 
-  .hero-title-group h1 {
-
+  .title-group h1 {
     font-size: 32px;
     line-height: 38px;
-
   }
 
 
-  .hero-subtitle {
-
+  .subtitle {
     font-size: 20px;
     line-height: 32px;
-
   }
 
 
-  .hero-description {
-
+  .description {
     font-size: 14px;
     line-height: 25px;
-
   }
 
 
-  .portfolio-inner {
+  .portfolio {
+    padding: 90px 24px;
+  }
 
-    padding-top: 90px;
-    padding-bottom: 90px;
 
+  .contact {
+    padding: 90px 24px;
+  }
+
+
+  #about,
+  #portfolio,
+  #contact {
+    scroll-margin-top: 115px;
   }
 
 }
