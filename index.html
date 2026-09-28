@@ -1,72 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>BE HYEON</title>
 
-  <!-- Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Noto Sans KR -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================================
-       HEADER
-  ================================= -->
-  <header class="site-header">
+  <header class="header">
 
     <div class="header-inner">
 
-      <!-- LOGO -->
-      <a href="#" class="logo" aria-label="BE HYEON Home">
-
+      <a href="#about" class="logo">
         <div class="logo-top">
-          <span class="logo-be">BE</span>
+          <span>BE</span>
           <span class="logo-line"></span>
         </div>
 
-        <div class="logo-bottom">
-          HYEON
-        </div>
-
+        <div class="logo-bottom">HYEON</div>
       </a>
 
+      <nav class="nav">
 
-      <!-- NAVIGATION -->
-      <nav class="navigation">
-
-        <a href="#about" class="nav-link active">
+        <a href="#about" class="nav-link active" data-text="About me">
           <span>About me</span>
         </a>
 
-        <span class="nav-divider">|</span>
+        <span class="divider">|</span>
 
-        <a href="#portfolio" class="nav-link">
+        <a href="#portfolio" class="nav-link" data-text="Portfolio">
           <span>Portfolio</span>
         </a>
 
-        <span class="nav-divider">|</span>
+        <span class="divider">|</span>
 
-        <a href="#contact" class="nav-link">
+        <a href="#contact" class="nav-link" data-text="Contact me">
           <span>Contact me</span>
         </a>
 
@@ -77,79 +54,65 @@
   </header>
 
 
-
-  <!-- ================================
-       MAIN
-  ================================= -->
   <main>
 
+    <section class="hero" id="about">
 
-    <!-- ================================
-         ABOUT / HERO
-    ================================= -->
-    <section
-      class="hero-section"
-      id="about"
-    >
+      <div class="hero-text">
 
-      <div class="hero-inner">
+        <div class="hero-heading">
 
+          <span class="badge">
+            What is BE_HYEON?
+          </span>
 
-        <!-- LEFT -->
-        <div class="hero-content">
+          <div class="title-group">
 
-          <div class="hero-top">
+            <h1>
+              Be in the Right place.
+            </h1>
 
-            <span class="section-badge">
-              What is BE_HYEON?
-            </span>
-
-
-            <div class="hero-title-group">
-
-              <h1>
-                Be in the Right place.
-              </h1>
-
-              <p class="hero-subtitle">
-                필요한 자리에 분명한 이유로 존재하는,
-                <strong>이다현</strong> 입니다
-              </p>
-
-            </div>
+            <p class="subtitle">
+              필요한 자리에 분명한 이유로 존재하는,
+              <strong>이다현</strong> 입니다
+            </p>
 
           </div>
 
-
-          <p class="hero-description">
-            BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
-            저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라,
-            상황을 읽고 지금 필요한 역할이 무엇인지 찾는 사람이고자 합니다.
-            때로는 방향을 잡고, 때로는 흐름을 정리하며,
-            필요한 순간에는 디테일까지 챙깁니다.
-            어디에 있든 이유 없이 존재하지 않고,
-            필요한 자리에서 필요한 역할을 해내는 것.
-            그것이 BE HYEON이 담고 있는 저의 디자인 태도입니다.
-          </p>
-
         </div>
 
 
+        <p class="description">
+          BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
+          저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라, 상황을 읽고 지금 필요한 역할이 무엇인지 찾는 사람이고자 합니다.
+          때로는 방향을 잡고, 때로는 흐름을 정리하며, 필요한 순간에는 디테일까지 챙깁니다.
+          어디에 있든 이유 없이 존재하지 않고, 필요한 자리에서 필요한 역할을 해내는 것.
+          그것이 BE HYEON이 담고 있는 저의 디자인 태도입니다.
+        </p>
 
-        <!-- RIGHT IMAGE -->
-        <div class="hero-image">
+      </div>
 
-          <!--
-          실제 이미지를 넣을 경우 아래처럼 교체하세요.
 
-          <img
-            src="./images/profile.jpg"
-            alt="이다현 프로필 이미지"
-          />
-          -->
+      <div class="hero-image">
+      </div>
 
-        </div>
+    </section>
 
+
+
+    <section class="portfolio" id="portfolio">
+
+      <span class="badge">
+        What is BE_HYEON?
+      </span>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card"></div>
+
+        <div class="portfolio-card"></div>
+
+        <div class="portfolio-card"></div>
 
       </div>
 
@@ -157,57 +120,11 @@
 
 
 
-    <!-- ================================
-         PORTFOLIO
-    ================================= -->
-    <section
-      class="portfolio-section"
-      id="portfolio"
-    >
+    <section class="contact" id="contact">
 
-      <div class="portfolio-inner">
-
-        <span class="section-badge portfolio-badge">
-          What is BE_HYEON?
-        </span>
-
-
-        <div class="portfolio-grid">
-
-          <article class="portfolio-card">
-          </article>
-
-          <article class="portfolio-card">
-          </article>
-
-          <article class="portfolio-card">
-          </article>
-
-        </div>
-
-      </div>
+      <h2>Contact me</h2>
 
     </section>
-
-
-
-    <!-- ================================
-         CONTACT
-         스크롤 테스트용 영역
-    ================================= -->
-    <section
-      class="contact-section"
-      id="contact"
-    >
-
-      <div class="contact-inner">
-
-        <h2>Contact me</h2>
-
-      </div>
-
-    </section>
-
 
   </main>
 
