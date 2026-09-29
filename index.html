@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Roboto:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -19,110 +19,500 @@
 
 <body>
 
-  <header class="header">
-    <div class="header-inner">
+  <div class="page">
 
-      <a href="#about" class="logo">
-        <div class="logo-top">
-          <span class="logo-be">BE</span>
-          <span class="logo-line"></span>
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="header-inner">
+
+        <a href="#top" class="logo">
+
+          <div class="logo-top">
+            <span class="logo-be">BE</span>
+            <span class="logo-line"></span>
+          </div>
+
+          <span class="logo-hyeon">HYEON</span>
+
+        </a>
+
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+
+        <nav class="nav">
+
+          <a href="#about" class="nav-link active" data-text="About me">
+            <span>About me</span>
+          </a>
+
+          <span class="nav-divider">｜</span>
+
+          <a href="#portfolio" class="nav-link" data-text="Portfolio">
+            <span>Portfolio</span>
+          </a>
+
+          <span class="nav-divider">｜</span>
+
+          <a href="#journey" class="nav-link" data-text="Contact me">
+            <span>Contact me</span>
+          </a>
+
+        </nav>
+
+      </div>
+
+    </header>
+
+
+    <main id="top">
+
+      <!-- HERO -->
+      <section class="hero">
+
+        <h1 class="hero-title fade-in-up">
+          READ SITUATION,<br>
+          TAKE RIGHT ROLE,<br>
+          MAKE DESIGN WORK
+        </h1>
+
+
+        <div class="hero-sub-wrap fade-in-up">
+
+          <p class="hero-sub">
+            각 프로젝트의 조건과 목적을 파악하고,<br>
+            그 안에서 가장 필요한 역할을 찾고,
+            실제로 작동하는 디자인으로 연결합니다.
+          </p>
+
         </div>
 
-        <div class="logo-bottom">HYEON</div>
-      </a>
-
-      <nav class="nav">
-
-        <a href="#about" class="nav-link active" data-text="About me">
-          <span>About me</span>
-        </a>
-
-        <span class="divider">|</span>
-
-        <a href="#portfolio" class="nav-link" data-text="Portfolio">
-          <span>Portfolio</span>
-        </a>
-
-        <span class="divider">|</span>
-
-        <a href="#contact" class="nav-link" data-text="Contact me">
-          <span>Contact me</span>
-        </a>
-
-      </nav>
-
-    </div>
-  </header>
+      </section>
 
 
-  <main>
+      <!-- FULL WIDTH IMAGE -->
+      <section class="hero-visual">
 
-    <section class="hero" id="about">
+        <img
+          src="hero.png"
+          alt="Design visual"
+          class="hero-visual-image"
+        >
 
-      <div class="hero-text">
+      </section>
 
-        <div class="hero-heading">
 
-          <span class="badge">
-            What is BE_HYEON?
+      <!-- ABOUT TITLE -->
+      <section class="about-heading" id="about">
+
+        <h2 class="fade-in-up">
+          About me
+        </h2>
+
+      </section>
+
+
+      <!-- ABOUT -->
+      <section class="about">
+
+        <div class="about-text">
+
+          <div class="about-intro fade-in-up">
+
+            <span class="tag">
+              What is BE_HYEON ?
+            </span>
+
+
+            <div class="about-title-group">
+
+              <h3>
+                Be in the Right Place
+              </h3>
+
+              <p>
+                안녕하십니까, 분명한 이유로 존재하는 이다현 입니다
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <p class="about-description fade-in-up">
+            BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
+            저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라, 상황을 읽고 지금 필요한
+            역할이 무엇인지 찾는 사람이고자 합니다. 때로는 방향을 잡고, 때로는 흐름을 정리하며,
+            필요한 순간에는 디테일까지 챙깁니다. 어디에 있든 이유 없이 존재하지 않고,
+            필요한 자리에 분명한 역할을 해내는 것. 그것이 BE HYEON이 담고 있는
+            저의 디자인 태도입니다.
+          </p>
+
+        </div>
+
+
+        <div class="about-image fade-in-up">
+
+          <img
+            src="profile.png"
+            alt="Profile"
+          >
+
+        </div>
+
+      </section>
+
+
+      <!-- STRENGTHS -->
+      <section class="strengths" id="portfolio">
+
+        <div class="section-title fade-in-up">
+
+          <span class="tag tag-bold">
+            What Do I Best?
           </span>
 
-          <div class="title-group">
+          <h2>
+            디자인 안에서 발휘되는 강점
+          </h2>
 
-            <h1>
-              Be in the Right place.
-            </h1>
+        </div>
 
-            <p class="subtitle">
-              필요한 자리에 분명한 이유로 존재하는,
-              <strong>이다현</strong> 입니다
-            </p>
+
+        <div class="cards">
+
+          <div class="cards-row">
+
+            <article class="skill-card skill-small fade-in-up">
+              <img
+                src="skill-analysis.png"
+                alt="자료수집 및 분석"
+              >
+            </article>
+
+
+            <article class="skill-card skill-large fade-in-up">
+              <img
+                src="skill-planning.png"
+                alt="디자인 기획"
+              >
+            </article>
+
+          </div>
+
+
+          <div class="cards-row">
+
+            <article class="skill-card skill-large fade-in-up">
+              <img
+                src="skill-visual.png"
+                alt="정보 시각화 및 전달"
+              >
+            </article>
+
+
+            <article class="skill-card skill-small fade-in-up">
+              <img
+                src="skill-multi.png"
+                alt="다양한 디자인 역량"
+              >
+            </article>
 
           </div>
 
         </div>
 
-
-        <p class="description">
-          BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
-          저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라, 상황을 읽고 지금 필요한 역할이 무엇인지 찾는 사람이고자 합니다.
-          때로는 방향을 잡고, 때로는 흐름을 정리하며, 필요한 순간에는 디테일까지 챙깁니다.
-          어디에 있든 이유 없이 존재하지 않고, 필요한 자리에서 필요한 역할을 해내는 것.
-          그것이 BE HYEON이 담고 있는 저의 디자인 태도입니다.
-        </p>
-
-      </div>
+      </section>
 
 
-      <div class="hero-image"></div>
+      <!-- WORK JOURNEY -->
+      <section class="journey" id="journey">
 
-    </section>
+        <div class="section-title fade-in-up">
 
+          <span class="tag tag-bold">
+            Work Journey
+          </span>
 
-    <section class="portfolio" id="portfolio">
+          <h2>
+            경험을 쌓아온 과정과 흐름
+          </h2>
 
-      <span class="badge">
-        What is BE_HYEON?
-      </span>
-
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card"></div>
-        <div class="portfolio-card"></div>
-        <div class="portfolio-card"></div>
-
-      </div>
-
-    </section>
+        </div>
 
 
-    <section class="contact" id="contact">
+        <div class="timeline">
 
-      <h2>Contact me</h2>
+          <svg
+            class="timeline-svg"
+            viewBox="0 0 1000 550"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
 
-    </section>
+            <path
+              class="timeline-path-background"
+              d="
+                M182 10
+                H818
 
-  </main>
+                C900 10
+                950 55
+                950 135
+
+                C950 215
+                900 260
+                818 260
+
+                H182
+
+                C100 260
+                50 305
+                50 385
+
+                C50 465
+                100 510
+                182 510
+
+                H818
+              "
+            />
+
+            <path
+              class="timeline-path-progress"
+              d="
+                M182 10
+                H818
+
+                C900 10
+                950 55
+                950 135
+
+                C950 215
+                900 260
+                818 260
+
+                H182
+
+                C100 260
+                50 305
+                50 385
+
+                C50 465
+                100 510
+                182 510
+
+                H818
+              "
+            />
+
+          </svg>
+
+
+          <div class="timeline-grid">
+
+            <!-- ROW 1 -->
+
+            <article class="timeline-item" data-order="0">
+
+              <span class="timeline-dot"></span>
+
+              <time>2019. 03</time>
+
+              <p>
+                '인덕대학교'<br>
+                도시디자인학과
+                <strong>입학</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="1">
+
+              <span class="timeline-dot"></span>
+
+              <time>2019. 06</time>
+
+              <p>
+                도시디자인학과<br>
+                과제전
+                <strong>대상</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="2">
+
+              <span class="timeline-dot"></span>
+
+              <time>2020. 01</time>
+
+              <p>
+                '디자인아이넥스'<br>
+                <strong>현장실습</strong>
+                (1개월)
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="3">
+
+              <span class="timeline-dot"></span>
+
+              <time>2021. 02</time>
+
+              <p>
+                '디자인그룹공장'<br>
+                <strong>입사</strong>
+                (2년)
+              </p>
+
+            </article>
+
+
+            <!-- ROW 2 -->
+
+            <article class="timeline-item" data-order="7">
+
+              <span class="timeline-dot"></span>
+
+              <time>2024. 05</time>
+
+              <p>
+                '강원대학교'<br>
+                디자인 동아리
+                <strong>입부</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="6">
+
+              <span class="timeline-dot"></span>
+
+              <time>2024. 03</time>
+
+              <p>
+                강원대학교<br>
+                멀티디자인학과
+                <strong>편입</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="5">
+
+              <span class="timeline-dot"></span>
+
+              <time>2023. 02</time>
+
+              <p>
+                '스터디셀럽'<br>
+                <strong>총괄 매니저</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="4">
+
+              <span class="timeline-dot"></span>
+
+              <time>2021. 02</time>
+
+              <p>
+                '인덕대학교'<br>
+                도시디자인학과
+                <strong>졸업</strong>
+              </p>
+
+            </article>
+
+
+            <!-- ROW 3 -->
+
+            <article class="timeline-item" data-order="8">
+
+              <span class="timeline-dot"></span>
+
+              <time>2024. 12</time>
+
+              <p>
+                국제 사이버 디자인<br>
+                트렌드 공모전
+                <strong>입선</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="9">
+
+              <span class="timeline-dot"></span>
+
+              <time>2025. 08</time>
+
+              <p>
+                커뮤니케이션 디자인<br>
+                국제 공모전
+                <strong>특별상</strong>
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="10">
+
+              <span class="timeline-dot"></span>
+
+              <time>2026. 02</time>
+
+              <p>
+                '트레이드월드'<br>
+                <strong>입사</strong>
+                (재직중)
+              </p>
+
+            </article>
+
+
+            <article class="timeline-item" data-order="11">
+
+              <span class="timeline-dot"></span>
+
+              <time>2024. 03</time>
+
+              <p>
+                '강원대학교'<br>
+                멀티디자인학과
+                <strong>졸업</strong>
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
 
 
   <script src="main.js"></script>
