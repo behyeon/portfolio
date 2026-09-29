@@ -6,7 +6,9 @@
 }
 
 
-/* RESET */
+/* ==================================================
+   RESET
+================================================== */
 
 * {
   margin: 0;
@@ -43,13 +45,17 @@ a {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 
-/* HEADER */
+/* ==================================================
+   HEADER
+================================================== */
 
 .site-header {
   position: sticky;
+
   top: 0;
 
   z-index: 9999;
@@ -59,7 +65,8 @@ img {
 
   background: #ffffff;
 
-  border-bottom: 1px solid var(--gray);
+  border-bottom:
+    1px solid var(--gray);
 }
 
 
@@ -76,6 +83,7 @@ img {
     20px;
 
   display: flex;
+
   align-items: flex-end;
   justify-content: space-between;
 
@@ -97,6 +105,7 @@ img {
 
 .logo-top {
   display: flex;
+
   align-items: flex-end;
 
   gap: 6px;
@@ -104,7 +113,9 @@ img {
 
 
 .logo-be {
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 35px;
   font-weight: 600;
@@ -122,19 +133,14 @@ img {
 
 
 .logo-hyeon {
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 35px;
   font-weight: 400;
 
   line-height: 23px;
-
-  transition: font-weight 0.15s ease;
-}
-
-
-.logo:hover .logo-hyeon {
-  font-weight: 500;
 }
 
 
@@ -142,6 +148,7 @@ img {
 
 .nav {
   display: flex;
+
   align-items: center;
 
   gap: 30px;
@@ -151,7 +158,9 @@ img {
 .nav-link {
   display: grid;
 
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 16px;
   font-weight: 300;
@@ -161,7 +170,8 @@ img {
 
 
 .nav-link::after {
-  content: attr(data-label);
+  content:
+    attr(data-label);
 
   grid-area: 1 / 1;
 
@@ -174,7 +184,8 @@ img {
 .nav-link span {
   grid-area: 1 / 1;
 
-  transition: font-weight 0.15s ease;
+  transition:
+    font-weight 0.15s ease;
 }
 
 
@@ -189,7 +200,9 @@ img {
 
 
 .nav-divider {
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 16px;
   font-weight: 300;
@@ -201,7 +214,9 @@ img {
 }
 
 
-/* HERO */
+/* ==================================================
+   HERO
+================================================== */
 
 .hero {
   width: 100%;
@@ -228,7 +243,9 @@ img {
     10px
     100px;
 
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 95px;
   font-weight: 700;
@@ -238,8 +255,6 @@ img {
   letter-spacing: -2px;
 
   color: var(--black);
-
-  text-align: left;
 }
 
 
@@ -249,6 +264,7 @@ img {
     100px;
 
   display: flex;
+
   justify-content: flex-end;
 }
 
@@ -256,7 +272,9 @@ img {
 .hero-copy {
   width: 620px;
 
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
 
   font-size: 18px;
   font-weight: 500;
@@ -271,7 +289,9 @@ img {
 }
 
 
-/* HERO FULL IMAGE */
+/* ==================================================
+   FULL IMAGE
+================================================== */
 
 .hero-image-section {
   width: 100vw;
@@ -293,7 +313,9 @@ img {
 }
 
 
-/* ABOUT TITLE */
+/* ==================================================
+   ABOUT TITLE
+================================================== */
 
 .about-title-section {
   width: 100%;
@@ -311,7 +333,9 @@ img {
 
 
 .about-title-section h2 {
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 50px;
   font-weight: 600;
@@ -320,7 +344,9 @@ img {
 }
 
 
-/* ABOUT */
+/* ==================================================
+   ABOUT
+================================================== */
 
 .about-section {
   width: 100%;
@@ -334,6 +360,7 @@ img {
     200px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -354,6 +381,7 @@ img {
 .about-intro {
   display: flex;
   flex-direction: column;
+
   align-items: flex-start;
 
   gap: 20px;
@@ -362,6 +390,7 @@ img {
 
 .pill {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -369,14 +398,18 @@ img {
     10px
     30px;
 
-  border: 1px solid var(--orange);
+  border:
+    1px solid var(--orange);
+
   border-radius: 30px;
 
-  background: var(--white);
+  background: #ffffff;
 
   color: var(--orange);
 
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 15px;
   font-weight: 500;
@@ -399,7 +432,9 @@ img {
 
 
 .about-heading-group h3 {
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
   font-size: 40px;
   font-weight: 500;
@@ -409,7 +444,9 @@ img {
 
 
 .about-heading-group p {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
 
   font-size: 30px;
   font-weight: 500;
@@ -421,7 +458,9 @@ img {
 
 
 .about-description {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
 
   font-size: 15px;
   font-weight: 300;
@@ -436,7 +475,9 @@ img {
   width: 412px;
   height: 432px;
 
-  flex: 0 0 412px;
+  flex:
+    0 0
+    412px;
 
   overflow: hidden;
 
@@ -452,11 +493,14 @@ img {
 }
 
 
-/* COMMON SECTION TITLE */
+/* ==================================================
+   SECTION TITLE
+================================================== */
 
 .section-heading {
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   gap: 20px;
@@ -466,7 +510,9 @@ img {
 
 
 .section-heading h2 {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
 
   font-size: 30px;
   font-weight: 500;
@@ -475,7 +521,9 @@ img {
 }
 
 
-/* STRENGTHS */
+/* ==================================================
+   STRENGTH
+================================================== */
 
 .strength-section {
   width: 100%;
@@ -521,7 +569,9 @@ img {
 
 
 .card-small {
-  flex: 0 0 478px;
+  flex:
+    0 0
+    478px;
 }
 
 
@@ -536,7 +586,8 @@ img {
 
   object-fit: cover;
 
-  transition: transform 0.4s ease;
+  transition:
+    transform 0.4s ease;
 }
 
 
@@ -545,16 +596,22 @@ img {
 }
 
 
-/* JOURNEY */
+/* ==================================================
+   JOURNEY
+================================================== */
 
 .journey-section {
   width: 100%;
 
-  padding-bottom: 100px;
+  padding:
+    0
+    0
+    150px;
 }
 
 
-.journey-section > .section-heading {
+.journey-section >
+.section-heading {
   width: 100%;
   max-width: 1440px;
 
@@ -566,13 +623,15 @@ img {
 }
 
 
-/* TIMELINE SCROLL AREA */
+/* ==================================================
+   TIMELINE SCROLL SPACE
+================================================== */
 
 .timeline-shell {
   position: relative;
 
   width: 100%;
-  height: 1450px;
+  height: 1550px;
 
   margin-top: 150px;
 }
@@ -581,28 +640,32 @@ img {
 .timeline-sticky {
   position: sticky;
 
-  top: 190px;
+  top: 185px;
 
   width: 100%;
-  height: 650px;
+  height: 720px;
 
   overflow: hidden;
 }
 
 
-/* SAME 1440 COORDINATE SYSTEM */
+/* ==================================================
+   TIMELINE 1440 CANVAS
+================================================== */
 
 .timeline-canvas {
   position: relative;
 
   width: 1440px;
-  height: 620px;
+  height: 700px;
 
   margin: 0 auto;
 }
 
 
-/* SVG */
+/* ==================================================
+   SVG
+================================================== */
 
 .timeline-svg {
   position: absolute;
@@ -613,7 +676,7 @@ img {
   z-index: 1;
 
   width: 1440px;
-  height: 620px;
+  height: 700px;
 
   overflow: visible;
 }
@@ -628,7 +691,8 @@ img {
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  vector-effect: non-scaling-stroke;
+  vector-effect:
+    non-scaling-stroke;
 }
 
 
@@ -642,45 +706,100 @@ img {
 }
 
 
-/* TIMELINE GRID */
+/* ==================================================
+   TIMELINE GRID
+
+   선 y 좌표
+   1행 = 30
+   2행 = 327
+   3행 = 624
+
+   점 높이 20px라 top = 선 - 10
+================================================== */
 
 .timeline-grid {
   position: absolute;
 
-  top: 10px;
-  left: 311px;
+  top: 20px;
+  left: 269px;
 
   z-index: 2;
 
-  width: 818px;
+  width: 902px;
 
   display: grid;
 
   grid-template-columns:
-    repeat(4, 182px);
+    repeat(
+      4,
+      182px
+    );
 
   grid-template-rows:
-    repeat(3, 100px);
+    repeat(
+      3,
+      100px
+    );
 
-  column-gap: 30px;
-  row-gap: 160px;
+  column-gap: 58px;
+
+  row-gap: 197px;
 }
 
 
-/* TIMELINE ITEM */
+/* DESKTOP PLACEMENT */
+
+.row-1 {
+  grid-row: 1;
+}
+
+
+.row-2 {
+  grid-row: 2;
+}
+
+
+.row-3 {
+  grid-row: 3;
+}
+
+
+.col-1 {
+  grid-column: 1;
+}
+
+
+.col-2 {
+  grid-column: 2;
+}
+
+
+.col-3 {
+  grid-column: 3;
+}
+
+
+.col-4 {
+  grid-column: 4;
+}
+
+
+/* ITEM */
 
 .timeline-item {
   width: 182px;
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   text-align: center;
 
   opacity: 0;
 
-  transform: translateY(30px);
+  transform:
+    translateY(30px);
 
   transition:
     opacity 0.6s ease-out,
@@ -691,7 +810,8 @@ img {
 .timeline-item.visible {
   opacity: 1;
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 
@@ -699,9 +819,11 @@ img {
   width: 20px;
   height: 20px;
 
-  flex: 0 0 20px;
+  flex:
+    0 0
+    20px;
 
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 
   border-radius: 50%;
 
@@ -712,24 +834,28 @@ img {
 .timeline-item time {
   margin-bottom: 10px;
 
-  font-family: "Roboto", sans-serif;
+  font-family:
+    "Roboto",
+    sans-serif;
 
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
 
-  line-height: 1.1;
+  line-height: 1;
 
   color: var(--black);
 }
 
 
 .timeline-item p {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family:
+    "Noto Sans KR",
+    sans-serif;
 
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
 
-  line-height: 26px;
+  line-height: 20px;
 
   color: var(--black);
 
@@ -742,12 +868,15 @@ img {
 }
 
 
-/* REVEAL */
+/* ==================================================
+   REVEAL
+================================================== */
 
 .reveal {
   opacity: 0;
 
-  transform: translateY(30px);
+  transform:
+    translateY(30px);
 
   transition:
     opacity 0.6s ease-out,
@@ -758,34 +887,39 @@ img {
 .reveal.visible {
   opacity: 1;
 
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 
-/* EXTRA BOTTOM SCROLL SPACE */
+/* ==================================================
+   PAGE END SPACE
+================================================== */
 
 .page-end-space {
   width: 100%;
-  height: 350px;
-
-  background: var(--white);
+  height: 400px;
 }
 
 
-/* MOBILE */
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width: 768px) {
 
+  /* HEADER */
+
   .site-header {
-    height: 100px;
+    height: 150px;
   }
 
 
   .header-inner {
     padding:
+      32px
       24px
-      24px
-      18px;
+      25px;
 
     align-items: center;
   }
@@ -794,30 +928,33 @@ img {
   .logo {
     padding-top: 0;
 
-    gap: 6px;
+    gap: 7px;
   }
 
 
   .logo-be,
   .logo-hyeon {
-    font-size: 25px;
+    font-size: 26px;
 
-    line-height: 18px;
+    line-height: 20px;
   }
 
 
   .logo-line {
-    width: 46px;
+    width: 48px;
   }
 
+
+  /* MENU */
 
   .mobile-menu-button {
     display: block;
 
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
 
-    border: 0;
+    border: none;
+
     background: transparent;
 
     cursor: pointer;
@@ -827,27 +964,30 @@ img {
   .mobile-menu-button span {
     display: block;
 
-    width: 24px;
+    width: 25px;
     height: 1px;
 
-    margin: 6px auto;
+    margin: 7px auto;
 
     background: var(--black);
 
-    transition: transform 0.2s ease;
+    transition:
+      transform 0.2s ease;
   }
 
 
-  .mobile-menu-button.open span:first-child {
+  .mobile-menu-button.open
+  span:first-child {
     transform:
-      translateY(3.5px)
+      translateY(4px)
       rotate(45deg);
   }
 
 
-  .mobile-menu-button.open span:last-child {
+  .mobile-menu-button.open
+  span:last-child {
     transform:
-      translateY(-3.5px)
+      translateY(-4px)
       rotate(-45deg);
   }
 
@@ -861,18 +1001,20 @@ img {
     width: 100%;
 
     padding:
-      30px
+      28px
       24px;
 
     display: none;
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 22px;
 
     background: #ffffff;
 
-    border-bottom: 1px solid var(--gray);
+    border-bottom:
+      1px solid var(--gray);
   }
 
 
@@ -904,7 +1046,11 @@ img {
       24px;
 
     font-size:
-      clamp(40px, 11vw, 50px);
+      clamp(
+        40px,
+        11vw,
+        50px
+      );
 
     line-height: 1.08;
 
@@ -929,8 +1075,22 @@ img {
   }
 
 
+  /* HERO IMAGE */
+
   .hero-image-section {
-    height: 300px;
+    height: auto;
+
+    overflow: visible;
+  }
+
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transform: none !important;
   }
 
 
@@ -965,9 +1125,20 @@ img {
     order: -1;
 
     width: 100%;
-    height: 300px;
+    height: auto;
+
+    aspect-ratio:
+      412 / 432;
 
     flex: none;
+  }
+
+
+  .profile-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
   }
 
 
@@ -1006,7 +1177,7 @@ img {
   }
 
 
-  /* STRENGTHS */
+  /* STRENGTH */
 
   .strength-section {
     padding:
@@ -1024,29 +1195,59 @@ img {
   .strength-grid {
     margin-top: 70px;
 
-    gap: 16px;
+    gap: 18px;
   }
 
 
   .strength-row {
+    display: flex;
     flex-direction: column;
 
-    gap: 16px;
+    gap: 18px;
   }
 
 
+  /*
+    중요:
+    모바일에서는 카드 높이를 강제로 250px로
+    고정하지 않습니다.
+
+    이미지 원본 전체가 보이도록 auto.
+  */
+
+  .strength-card,
   .card-small,
   .card-large {
     width: 100%;
-    height: 250px;
+    height: auto;
 
     flex: none;
+
+    overflow: hidden;
+
+    border-radius: 15px;
   }
 
 
-  /* TIMELINE MOBILE */
+  .strength-card img {
+    width: 100%;
+    height: auto;
 
-  .journey-section > .section-heading {
+    object-fit: contain;
+
+    transform: none !important;
+  }
+
+
+  /* JOURNEY */
+
+  .journey-section {
+    padding-bottom: 100px;
+  }
+
+
+  .journey-section >
+  .section-heading {
     padding:
       0
       24px;
@@ -1065,6 +1266,8 @@ img {
 
     top: auto;
 
+    width: 100%;
+
     height: auto;
 
     overflow: visible;
@@ -1072,32 +1275,46 @@ img {
 
 
   .timeline-canvas {
-    width: calc(100% - 48px);
+    position: relative;
+
+    width:
+      calc(
+        100% - 48px
+      );
+
     height: auto;
 
     margin: 0 auto;
   }
 
 
+  /* DESKTOP SVG OFF */
+
   .timeline-svg {
     display: none;
   }
 
+
+  /* MOBILE BACKGROUND LINE */
 
   .timeline-canvas::before {
     content: "";
 
     position: absolute;
 
-    top: 0;
-    bottom: 0;
+    top: 10px;
+    bottom: 10px;
+
     left: 9px;
 
     width: 2px;
 
-    background: var(--gray);
+    background:
+      var(--gray);
   }
 
+
+  /* MOBILE PROGRESS */
 
   .timeline-canvas::after {
     content: "";
@@ -1106,7 +1323,7 @@ img {
 
     z-index: 1;
 
-    top: 0;
+    top: 10px;
     left: 9px;
 
     width: 2px;
@@ -1114,12 +1331,16 @@ img {
     height:
       calc(
         var(--mobile-progress, 0)
-        * 100%
+        *
+        calc(100% - 20px)
       );
 
-    background: var(--orange);
+    background:
+      var(--orange);
   }
 
+
+  /* MOBILE ITEMS */
 
   .timeline-grid {
     position: relative;
@@ -1127,9 +1348,11 @@ img {
     top: auto;
     left: auto;
 
+    z-index: 2;
+
     width: 100%;
 
-    padding-left: 45px;
+    padding-left: 46px;
 
     display: flex;
     flex-direction: column;
@@ -1143,6 +1366,8 @@ img {
 
     width: 100%;
 
+    display: flex;
+
     align-items: flex-start;
 
     text-align: left;
@@ -1153,28 +1378,37 @@ img {
     position: absolute;
 
     top: 0;
-    left: -45px;
+    left: -46px;
+
+    width: 20px;
+    height: 20px;
   }
 
 
   .timeline-item time {
-    font-size: 22px;
+    font-size: 20px;
+
+    text-align: left;
   }
 
 
   .timeline-item p {
-    font-size: 17px;
+    font-size: 15px;
 
-    line-height: 25px;
+    line-height: 20px;
+
+    text-align: left;
   }
 
 
   .page-end-space {
-    height: 160px;
+    height: 180px;
   }
 
 }
 
+
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
 
