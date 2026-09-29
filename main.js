@@ -1,16 +1,10 @@
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* MOBILE MENU */
 
 const menuButton =
-  document.querySelector(
-    ".mobile-menu-button"
-  );
+  document.querySelector(".mobile-menu-button");
 
 const nav =
-  document.querySelector(
-    ".nav"
-  );
+  document.querySelector(".nav");
 
 
 if (menuButton && nav) {
@@ -20,16 +14,12 @@ if (menuButton && nav) {
     () => {
 
       const open =
-        menuButton.classList.toggle(
-          "open"
-        );
-
+        menuButton.classList.toggle("open");
 
       nav.classList.toggle(
         "open",
         open
       );
-
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -48,13 +38,8 @@ if (menuButton && nav) {
         "click",
         () => {
 
-          menuButton.classList.remove(
-            "open"
-          );
-
-          nav.classList.remove(
-            "open"
-          );
+          menuButton.classList.remove("open");
+          nav.classList.remove("open");
 
           menuButton.setAttribute(
             "aria-expanded",
@@ -69,15 +54,10 @@ if (menuButton && nav) {
 }
 
 
-
-/* =========================================
-   GENERAL FADE
-========================================= */
+/* GENERAL FADE */
 
 const revealElements =
-  document.querySelectorAll(
-    ".reveal"
-  );
+  document.querySelectorAll(".reveal");
 
 
 const revealObserver =
@@ -91,11 +71,9 @@ const revealObserver =
           return;
         }
 
-
         entry.target.classList.add(
           "visible"
         );
-
 
         observer.unobserve(
           entry.target
@@ -112,27 +90,19 @@ const revealObserver =
   );
 
 
-revealElements.forEach(
-  (element) => {
+revealElements.forEach((element) => {
 
-    revealObserver.observe(
-      element
-    );
+  revealObserver.observe(element);
 
-  }
-);
+});
 
 
+/* HERO PARALLAX */
 
-/* =========================================
-   HERO PARALLAX
-========================================= */
-
-const heroSection =
+const heroImageSection =
   document.querySelector(
     ".hero-image-section"
   );
-
 
 const heroImage =
   document.querySelector(
@@ -143,19 +113,17 @@ const heroImage =
 function updateHeroParallax() {
 
   if (
-    !heroSection ||
+    !heroImageSection ||
     !heroImage
   ) {
     return;
   }
 
 
-  if (
-    window.innerWidth <= 768
-  ) {
+  if (window.innerWidth <= 768) {
 
     heroImage.style.transform =
-      "scale(1)";
+      "translateY(0)";
 
     return;
 
@@ -163,16 +131,16 @@ function updateHeroParallax() {
 
 
   const rect =
-    heroSection.getBoundingClientRect();
+    heroImageSection.getBoundingClientRect();
 
 
-  const viewport =
+  const viewportHeight =
     window.innerHeight;
 
 
   if (
     rect.bottom < 0 ||
-    rect.top > viewport
+    rect.top > viewportHeight
   ) {
     return;
   }
@@ -180,51 +148,41 @@ function updateHeroParallax() {
 
   const progress =
     (
-      viewport -
+      viewportHeight -
       rect.top
     ) /
     (
-      viewport +
+      viewportHeight +
       rect.height
     );
 
 
-  const translate =
-    (
-      progress -
-      0.5
-    ) *
-    24;
+  const move =
+    (progress - 0.5) * 24;
 
 
   heroImage.style.transform =
-    `scale(1.04) translateY(${translate}px)`;
+    `scale(1.04) translateY(${move}px)`;
 
 }
 
 
-
-/* =========================================
-   TIMELINE
-========================================= */
+/* TIMELINE */
 
 const timelineShell =
   document.querySelector(
     ".timeline-shell"
   );
 
-
-const timelineVisual =
+const timelineCanvas =
   document.querySelector(
-    ".timeline-visual"
+    ".timeline-canvas"
   );
-
 
 const timelinePath =
   document.querySelector(
     ".timeline-path-progress"
   );
-
 
 const timelineItems =
   Array.from(
@@ -237,30 +195,19 @@ const timelineItems =
 let timelineLength = 0;
 
 
-
-function clamp(
-  number,
-  min,
-  max
-) {
+function clamp(value, min, max) {
 
   return Math.min(
-    Math.max(
-      number,
-      min
-    ),
+    Math.max(value, min),
     max
   );
 
 }
 
 
-
 function setupTimeline() {
 
-  if (!timelinePath) {
-    return;
-  }
+  if (!timelinePath) return;
 
 
   timelineLength =
@@ -268,14 +215,13 @@ function setupTimeline() {
 
 
   timelinePath.style.strokeDasharray =
-    timelineLength;
+    `${timelineLength}`;
 
 
   timelinePath.style.strokeDashoffset =
-    timelineLength;
+    `${timelineLength}`;
 
 }
-
 
 
 function updateDesktopTimeline() {
@@ -296,29 +242,22 @@ function updateDesktopTimeline() {
     window.innerHeight;
 
 
-  /*
-    timeline shell이 화면 안으로 들어온 시점부터
-    shell 끝까지 스크롤하는 동안 0 → 1 진행
-  */
-
-  const start =
-    viewportHeight * 0.78;
+  const startPoint =
+    viewportHeight * 0.82;
 
 
-  const totalDistance =
-    timelineShell.offsetHeight -
-    viewportHeight * 0.35;
+  const animationDistance =
+    timelineShell.offsetHeight - 500;
 
 
   const travelled =
-    start -
-    rect.top;
+    startPoint - rect.top;
 
 
   const progress =
     clamp(
       travelled /
-      totalDistance,
+      animationDistance,
       0,
       1
     );
@@ -326,102 +265,64 @@ function updateDesktopTimeline() {
 
   timelinePath.style.strokeDashoffset =
     timelineLength *
-    (
-      1 -
-      progress
-    );
+    (1 - progress);
 
 
-  /*
-    12개 항목을 실제 경로 진행 순서대로 등장
-  */
+  timelineItems.forEach((item) => {
 
-  timelineItems.forEach(
-    (item) => {
-
-      const order =
-        Number(
-          item.dataset.order
-        );
+    const order =
+      Number(
+        item.dataset.order
+      );
 
 
-      const revealAt =
-        0.035 +
-        order *
-        0.078;
+    const revealAt =
+      0.035 +
+      order * 0.075;
 
 
-      if (
-        progress >= revealAt
-      ) {
+    if (progress >= revealAt) {
 
-        const delayWithinRow =
-          (
-            order %
-            4
-          ) *
-          0.15;
-
-
-        item.style.transitionDelay =
-          `${delayWithinRow}s`;
-
-
-        item.classList.add(
-          "visible"
-        );
-
-      }
+      item.classList.add(
+        "visible"
+      );
 
     }
-  );
+
+  });
 
 }
 
 
-
-/* =========================================
-   MOBILE TIMELINE
-========================================= */
-
 function updateMobileTimeline() {
 
-  if (
-    !timelineVisual
-  ) {
-    return;
-  }
+  if (!timelineCanvas) return;
 
 
   const rect =
-    timelineVisual
-      .getBoundingClientRect();
+    timelineCanvas.getBoundingClientRect();
 
 
   const viewportHeight =
     window.innerHeight;
 
 
-  const total =
-    rect.height +
-    viewportHeight *
-    0.5;
-
-
   const progress =
     clamp(
       (
-        viewportHeight *
-        0.8 -
+        viewportHeight * 0.8 -
         rect.top
       ) /
-      total,
+      (
+        rect.height +
+        viewportHeight * 0.4
+      ),
       0,
       1
     );
 
 
-  timelineVisual.style.setProperty(
+  timelineCanvas.style.setProperty(
     "--mobile-progress",
     progress
   );
@@ -433,16 +334,12 @@ function updateMobileTimeline() {
       const revealAt =
         index /
         timelineItems.length *
-        0.85;
+        0.9;
 
 
       if (
         progress >= revealAt
       ) {
-
-        item.style.transitionDelay =
-          "0s";
-
 
         item.classList.add(
           "visible"
@@ -454,7 +351,6 @@ function updateMobileTimeline() {
   );
 
 }
-
 
 
 function updateTimeline() {
@@ -474,10 +370,7 @@ function updateTimeline() {
 }
 
 
-
-/* =========================================
-   ACTIVE NAV
-========================================= */
+/* ACTIVE NAV */
 
 const navLinks =
   Array.from(
@@ -487,35 +380,26 @@ const navLinks =
   );
 
 
-const sections = [
-  document.getElementById(
-    "about"
-  ),
-  document.getElementById(
-    "portfolio"
-  ),
-  document.getElementById(
-    "journey"
-  )
+const navSections = [
+  document.getElementById("about"),
+  document.getElementById("portfolio"),
+  document.getElementById("journey")
 ];
 
 
 function updateNav() {
 
   const currentY =
-    window.scrollY +
-    260;
+    window.scrollY + 260;
 
 
   let activeIndex = 0;
 
 
-  sections.forEach(
+  navSections.forEach(
     (section, index) => {
 
-      if (!section) {
-        return;
-      }
+      if (!section) return;
 
 
       if (
@@ -546,10 +430,7 @@ function updateNav() {
 }
 
 
-
-/* =========================================
-   SCROLL LOOP
-========================================= */
+/* SCROLL LOOP */
 
 let ticking = false;
 
@@ -557,9 +438,7 @@ let ticking = false;
 function updateEffects() {
 
   updateHeroParallax();
-
   updateTimeline();
-
   updateNav();
 
   ticking = false;
@@ -569,9 +448,7 @@ function updateEffects() {
 
 function requestUpdate() {
 
-  if (ticking) {
-    return;
-  }
+  if (ticking) return;
 
 
   ticking = true;
@@ -604,7 +481,6 @@ window.addEventListener(
   () => {
 
     setupTimeline();
-
     updateEffects();
 
   }
