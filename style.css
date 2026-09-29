@@ -6,14 +6,12 @@
 }
 
 
-/* =========================================
-   RESET
-========================================= */
+/* RESET */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -48,15 +46,11 @@ img {
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* HEADER */
 
 .site-header {
   position: sticky;
-
   top: 0;
-  left: 0;
 
   z-index: 9999;
 
@@ -65,8 +59,7 @@ img {
 
   background: #ffffff;
 
-  border-bottom:
-    1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
 }
 
 
@@ -90,9 +83,7 @@ img {
 }
 
 
-/* =========================================
-   LOGO
-========================================= */
+/* LOGO */
 
 .logo {
   padding-top: 20px;
@@ -138,8 +129,7 @@ img {
 
   line-height: 23px;
 
-  transition:
-    font-weight 0.15s ease;
+  transition: font-weight 0.15s ease;
 }
 
 
@@ -148,9 +138,7 @@ img {
 }
 
 
-/* =========================================
-   NAV
-========================================= */
+/* NAV */
 
 .nav {
   display: flex;
@@ -186,8 +174,7 @@ img {
 .nav-link span {
   grid-area: 1 / 1;
 
-  transition:
-    font-weight 0.15s ease;
+  transition: font-weight 0.15s ease;
 }
 
 
@@ -214,9 +201,7 @@ img {
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero {
   width: 100%;
@@ -225,7 +210,7 @@ img {
   margin: 0 auto;
 
   padding:
-    80px
+    130px
     0
     150px;
 
@@ -233,6 +218,8 @@ img {
   flex-direction: column;
 
   gap: 100px;
+
+  background: #ffffff;
 }
 
 
@@ -251,6 +238,8 @@ img {
   letter-spacing: -2px;
 
   color: var(--black);
+
+  text-align: left;
 }
 
 
@@ -267,26 +256,22 @@ img {
 .hero-copy {
   width: 620px;
 
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 18px;
   font-weight: 500;
 
   line-height: 28px;
 
-  text-align: right;
-
   color: var(--orange);
+
+  text-align: right;
 
   word-break: keep-all;
 }
 
 
-/* =========================================
-   HERO FULL IMAGE
-========================================= */
+/* HERO FULL IMAGE */
 
 .hero-image-section {
   width: 100vw;
@@ -304,15 +289,11 @@ img {
 
   object-fit: cover;
 
-  transform: scale(1.01);
-
   will-change: transform;
 }
 
 
-/* =========================================
-   ABOUT TITLE
-========================================= */
+/* ABOUT TITLE */
 
 .about-title-section {
   width: 100%;
@@ -330,9 +311,7 @@ img {
 
 
 .about-title-section h2 {
-  font-family:
-    "Roboto",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 
   font-size: 50px;
   font-weight: 600;
@@ -341,9 +320,7 @@ img {
 }
 
 
-/* =========================================
-   ABOUT
-========================================= */
+/* ABOUT */
 
 .about-section {
   width: 100%;
@@ -385,7 +362,6 @@ img {
 
 .pill {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
@@ -393,18 +369,14 @@ img {
     10px
     30px;
 
-  border:
-    1px solid var(--orange);
-
+  border: 1px solid var(--orange);
   border-radius: 30px;
 
   background: var(--white);
 
   color: var(--orange);
 
-  font-family:
-    "Roboto",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 
   font-size: 15px;
   font-weight: 500;
@@ -427,9 +399,7 @@ img {
 
 
 .about-heading-group h3 {
-  font-family:
-    "Roboto",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 
   font-size: 40px;
   font-weight: 500;
@@ -439,9 +409,7 @@ img {
 
 
 .about-heading-group p {
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 30px;
   font-weight: 500;
@@ -453,9 +421,7 @@ img {
 
 
 .about-description {
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 15px;
   font-weight: 300;
@@ -470,10 +436,7 @@ img {
   width: 412px;
   height: 432px;
 
-  flex:
-    0
-    0
-    412px;
+  flex: 0 0 412px;
 
   overflow: hidden;
 
@@ -489,14 +452,11 @@ img {
 }
 
 
-/* =========================================
-   COMMON SECTION HEADING
-========================================= */
+/* COMMON SECTION TITLE */
 
 .section-heading {
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
   gap: 20px;
@@ -506,9 +466,7 @@ img {
 
 
 .section-heading h2 {
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 30px;
   font-weight: 500;
@@ -517,9 +475,7 @@ img {
 }
 
 
-/* =========================================
-   STRENGTHS
-========================================= */
+/* STRENGTHS */
 
 .strength-section {
   width: 100%;
@@ -545,9 +501,9 @@ img {
 
 
 .strength-row {
-  display: flex;
-
   width: 100%;
+
+  display: flex;
 
   gap: 25px;
 }
@@ -565,10 +521,7 @@ img {
 
 
 .card-small {
-  flex:
-    0
-    0
-    478px;
+  flex: 0 0 478px;
 }
 
 
@@ -583,20 +536,16 @@ img {
 
   object-fit: cover;
 
-  transition:
-    transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 
 .strength-card:hover img {
-  transform:
-    scale(1.02);
+  transform: scale(1.02);
 }
 
 
-/* =========================================
-   JOURNEY
-========================================= */
+/* JOURNEY */
 
 .journey-section {
   width: 100%;
@@ -617,25 +566,19 @@ img {
 }
 
 
-/* =========================================
-   TIMELINE SCROLL RUNWAY
-
-   1250px짜리 스크롤 구간을 만들고
-   안의 timeline-visual이 잠깐 sticky 상태로
-   고정되어 있는 동안 선이 그려집니다.
-========================================= */
+/* TIMELINE SCROLL AREA */
 
 .timeline-shell {
   position: relative;
 
   width: 100%;
-  height: 1250px;
+  height: 1450px;
 
   margin-top: 150px;
 }
 
 
-.timeline-visual {
+.timeline-sticky {
   position: sticky;
 
   top: 190px;
@@ -647,9 +590,19 @@ img {
 }
 
 
-/* =========================================
-   SVG
-========================================= */
+/* SAME 1440 COORDINATE SYSTEM */
+
+.timeline-canvas {
+  position: relative;
+
+  width: 1440px;
+  height: 620px;
+
+  margin: 0 auto;
+}
+
+
+/* SVG */
 
 .timeline-svg {
   position: absolute;
@@ -659,7 +612,7 @@ img {
 
   z-index: 1;
 
-  width: 100%;
+  width: 1440px;
   height: 620px;
 
   overflow: visible;
@@ -675,8 +628,7 @@ img {
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  vector-effect:
-    non-scaling-stroke;
+  vector-effect: non-scaling-stroke;
 }
 
 
@@ -690,58 +642,45 @@ img {
 }
 
 
-/* =========================================
-   TIMELINE GRID
-========================================= */
+/* TIMELINE GRID */
 
 .timeline-grid {
-  position: relative;
+  position: absolute;
+
+  top: 10px;
+  left: 311px;
 
   z-index: 2;
 
   width: 818px;
-  height: 620px;
-
-  margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    repeat(
-      4,
-      182px
-    );
+    repeat(4, 182px);
 
   grid-template-rows:
-    repeat(
-      3,
-      100px
-    );
+    repeat(3, 100px);
 
   column-gap: 30px;
-
   row-gap: 160px;
 }
 
 
-/* =========================================
-   TIMELINE ITEM
-========================================= */
+/* TIMELINE ITEM */
 
 .timeline-item {
   width: 182px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
   text-align: center;
 
   opacity: 0;
 
-  transform:
-    translateY(30px);
+  transform: translateY(30px);
 
   transition:
     opacity 0.6s ease-out,
@@ -752,8 +691,7 @@ img {
 .timeline-item.visible {
   opacity: 1;
 
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 
@@ -761,10 +699,7 @@ img {
   width: 20px;
   height: 20px;
 
-  flex:
-    0
-    0
-    20px;
+  flex: 0 0 20px;
 
   margin-bottom: 5px;
 
@@ -777,9 +712,7 @@ img {
 .timeline-item time {
   margin-bottom: 10px;
 
-  font-family:
-    "Roboto",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 
   font-size: 25px;
   font-weight: 600;
@@ -791,9 +724,7 @@ img {
 
 
 .timeline-item p {
-  font-family:
-    "Noto Sans KR",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   font-size: 20px;
   font-weight: 400;
@@ -811,15 +742,12 @@ img {
 }
 
 
-/* =========================================
-   REVEAL
-========================================= */
+/* REVEAL */
 
 .reveal {
   opacity: 0;
 
-  transform:
-    translateY(30px);
+  transform: translateY(30px);
 
   transition:
     opacity 0.6s ease-out,
@@ -830,16 +758,11 @@ img {
 .reveal.visible {
   opacity: 1;
 
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 
-/* =========================================
-   END SPACE
-
-   맨 마지막에서도 충분히 더 내릴 수 있게
-========================================= */
+/* EXTRA BOTTOM SCROLL SPACE */
 
 .page-end-space {
   width: 100%;
@@ -849,14 +772,9 @@ img {
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 768px) {
-
-
-  /* HEADER */
 
   .site-header {
     height: 100px;
@@ -893,8 +811,6 @@ img {
   }
 
 
-  /* MOBILE MENU */
-
   .mobile-menu-button {
     display: block;
 
@@ -902,7 +818,6 @@ img {
     height: 32px;
 
     border: 0;
-
     background: transparent;
 
     cursor: pointer;
@@ -919,8 +834,7 @@ img {
 
     background: var(--black);
 
-    transition:
-      transform 0.2s ease;
+    transition: transform 0.2s ease;
   }
 
 
@@ -952,15 +866,13 @@ img {
 
     display: none;
     flex-direction: column;
-
     align-items: flex-start;
 
     gap: 22px;
 
     background: #ffffff;
 
-    border-bottom:
-      1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
   }
 
 
@@ -978,7 +890,7 @@ img {
 
   .hero {
     padding:
-      70px
+      80px
       0
       100px;
 
@@ -992,11 +904,7 @@ img {
       24px;
 
     font-size:
-      clamp(
-        40px,
-        11vw,
-        50px
-      );
+      clamp(40px, 11vw, 50px);
 
     line-height: 1.08;
 
@@ -1021,14 +929,12 @@ img {
   }
 
 
-  /* IMAGE */
-
   .hero-image-section {
     height: 300px;
   }
 
 
-  /* ABOUT TITLE */
+  /* ABOUT */
 
   .about-title-section {
     padding:
@@ -1042,8 +948,6 @@ img {
     font-size: 38px;
   }
 
-
-  /* ABOUT */
 
   .about-section {
     padding:
@@ -1102,7 +1006,7 @@ img {
   }
 
 
-  /* STRENGTH */
+  /* STRENGTHS */
 
   .strength-section {
     padding:
@@ -1140,12 +1044,7 @@ img {
   }
 
 
-  /* JOURNEY */
-
-  .journey-section {
-    padding-bottom: 80px;
-  }
-
+  /* TIMELINE MOBILE */
 
   .journey-section > .section-heading {
     padding:
@@ -1161,21 +1060,22 @@ img {
   }
 
 
-  .timeline-visual {
+  .timeline-sticky {
     position: relative;
 
     top: auto;
 
-    width:
-      calc(
-        100% - 48px
-      );
+    height: auto;
 
+    overflow: visible;
+  }
+
+
+  .timeline-canvas {
+    width: calc(100% - 48px);
     height: auto;
 
     margin: 0 auto;
-
-    overflow: visible;
   }
 
 
@@ -1184,7 +1084,7 @@ img {
   }
 
 
-  .timeline-visual::before {
+  .timeline-canvas::before {
     content: "";
 
     position: absolute;
@@ -1199,7 +1099,7 @@ img {
   }
 
 
-  .timeline-visual::after {
+  .timeline-canvas::after {
     content: "";
 
     position: absolute;
@@ -1222,10 +1122,12 @@ img {
 
 
   .timeline-grid {
-    width: 100%;
-    height: auto;
+    position: relative;
 
-    margin: 0;
+    top: auto;
+    left: auto;
+
+    width: 100%;
 
     padding-left: 45px;
 
@@ -1274,13 +1176,7 @@ img {
 }
 
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (
-  prefers-reduced-motion: reduce
-) {
+@media (prefers-reduced-motion: reduce) {
 
   .reveal,
   .timeline-item {
