@@ -1,40 +1,46 @@
-/* ========================================
+/* =========================================
    MOBILE MENU
-======================================== */
+========================================= */
 
-const menuToggle =
-  document.querySelector(".menu-toggle");
+const menuButton =
+  document.querySelector(
+    ".mobile-menu-button"
+  );
 
-const navigation =
-  document.querySelector(".nav");
+const nav =
+  document.querySelector(
+    ".nav"
+  );
 
 
-if (menuToggle && navigation) {
+if (menuButton && nav) {
 
-  menuToggle.addEventListener(
+  menuButton.addEventListener(
     "click",
     () => {
 
       const open =
-        menuToggle.classList.toggle(
-          "active"
+        menuButton.classList.toggle(
+          "open"
         );
 
-      navigation.classList.toggle(
+
+      nav.classList.toggle(
         "open",
         open
       );
 
-      menuToggle.setAttribute(
+
+      menuButton.setAttribute(
         "aria-expanded",
-        open
+        String(open)
       );
 
     }
   );
 
 
-  navigation
+  nav
     .querySelectorAll("a")
     .forEach((link) => {
 
@@ -42,15 +48,15 @@ if (menuToggle && navigation) {
         "click",
         () => {
 
-          menuToggle.classList.remove(
-            "active"
-          );
-
-          navigation.classList.remove(
+          menuButton.classList.remove(
             "open"
           );
 
-          menuToggle.setAttribute(
+          nav.classList.remove(
+            "open"
+          );
+
+          menuButton.setAttribute(
             "aria-expanded",
             "false"
           );
@@ -63,17 +69,18 @@ if (menuToggle && navigation) {
 }
 
 
-/* ========================================
-   GENERAL FADE-IN
-======================================== */
 
-const fadeElements =
+/* =========================================
+   GENERAL FADE
+========================================= */
+
+const revealElements =
   document.querySelectorAll(
-    ".fade-in-up"
+    ".reveal"
   );
 
 
-const fadeObserver =
+const revealObserver =
   new IntersectionObserver(
 
     (entries, observer) => {
@@ -105,39 +112,50 @@ const fadeObserver =
   );
 
 
-fadeElements.forEach((element) => {
+revealElements.forEach(
+  (element) => {
 
-  fadeObserver.observe(element);
+    revealObserver.observe(
+      element
+    );
 
-});
+  }
+);
 
 
-/* ========================================
+
+/* =========================================
    HERO PARALLAX
-======================================== */
+========================================= */
 
-const heroVisual =
+const heroSection =
   document.querySelector(
-    ".hero-visual"
+    ".hero-image-section"
   );
+
 
 const heroImage =
   document.querySelector(
-    ".hero-visual-image"
+    ".hero-image"
   );
 
 
-function updateParallax() {
+function updateHeroParallax() {
 
-  if (!heroVisual || !heroImage) {
+  if (
+    !heroSection ||
+    !heroImage
+  ) {
     return;
   }
 
 
-  if (window.innerWidth <= 768) {
+  if (
+    window.innerWidth <= 768
+  ) {
 
     heroImage.style.transform =
-      "translateY(-5%)";
+      "scale(1)";
 
     return;
 
@@ -145,16 +163,16 @@ function updateParallax() {
 
 
   const rect =
-    heroVisual.getBoundingClientRect();
+    heroSection.getBoundingClientRect();
 
 
-  const screenHeight =
+  const viewport =
     window.innerHeight;
 
 
   if (
     rect.bottom < 0 ||
-    rect.top > screenHeight
+    rect.top > viewport
   ) {
     return;
   }
@@ -162,39 +180,51 @@ function updateParallax() {
 
   const progress =
     (
-      screenHeight -
+      viewport -
       rect.top
     ) /
     (
-      screenHeight +
+      viewport +
       rect.height
     );
 
 
-  const movement =
-    -9 +
-    progress * 7;
+  const translate =
+    (
+      progress -
+      0.5
+    ) *
+    24;
 
 
   heroImage.style.transform =
-    `translateY(${movement}%)`;
+    `scale(1.04) translateY(${translate}px)`;
 
 }
 
 
-/* ========================================
-   TIMELINE
-======================================== */
 
-const timeline =
+/* =========================================
+   TIMELINE
+========================================= */
+
+const timelineShell =
   document.querySelector(
-    ".timeline"
+    ".timeline-shell"
   );
+
+
+const timelineVisual =
+  document.querySelector(
+    ".timeline-visual"
+  );
+
 
 const timelinePath =
   document.querySelector(
     ".timeline-path-progress"
   );
+
 
 const timelineItems =
   Array.from(
@@ -205,6 +235,25 @@ const timelineItems =
 
 
 let timelineLength = 0;
+
+
+
+function clamp(
+  number,
+  min,
+  max
+) {
+
+  return Math.min(
+    Math.max(
+      number,
+      min
+    ),
+    max
+  );
+
+}
+
 
 
 function setupTimeline() {
@@ -228,86 +277,64 @@ function setupTimeline() {
 }
 
 
-function clamp(
-  value,
-  min,
-  max
-) {
 
-  return Math.min(
-    Math.max(value, min),
-    max
-  );
+function updateDesktopTimeline() {
 
-}
-
-
-function updateTimeline() {
-
-  if (!timeline) {
+  if (
+    !timelineShell ||
+    !timelinePath
+  ) {
     return;
   }
 
 
   const rect =
-    timeline.getBoundingClientRect();
+    timelineShell.getBoundingClientRect();
 
 
-  const screenHeight =
+  const viewportHeight =
     window.innerHeight;
 
 
+  /*
+    timeline shell이 화면 안으로 들어온 시점부터
+    shell 끝까지 스크롤하는 동안 0 → 1 진행
+  */
+
   const start =
-    screenHeight * 0.8;
+    viewportHeight * 0.78;
 
 
-  const travel =
-    rect.height +
-    screenHeight * 0.6;
+  const totalDistance =
+    timelineShell.offsetHeight -
+    viewportHeight * 0.35;
 
 
-  const rawProgress =
-    (
-      start -
-      rect.top
-    ) /
-    travel;
+  const travelled =
+    start -
+    rect.top;
 
 
   const progress =
     clamp(
-      rawProgress,
+      travelled /
+      totalDistance,
       0,
       1
     );
 
 
-  /* DESKTOP SVG */
-
-  if (
-    timelinePath &&
-    window.innerWidth > 768
-  ) {
-
-    timelinePath.style.strokeDashoffset =
-      timelineLength *
-      (
-        1 -
-        progress
-      );
-
-  }
+  timelinePath.style.strokeDashoffset =
+    timelineLength *
+    (
+      1 -
+      progress
+    );
 
 
-  /* MOBILE LINE */
-
-  timeline.style.setProperty(
-    "--mobile-progress",
-    progress
-  );
-
-
-  /* TIMELINE ITEMS */
+  /*
+    12개 항목을 실제 경로 진행 순서대로 등장
+  */
 
   timelineItems.forEach(
     (item) => {
@@ -318,17 +345,17 @@ function updateTimeline() {
         );
 
 
-      const revealPoint =
-        0.03 +
-        order * 0.075;
+      const revealAt =
+        0.035 +
+        order *
+        0.078;
 
 
       if (
-        progress >=
-        revealPoint
+        progress >= revealAt
       ) {
 
-        const delay =
+        const delayWithinRow =
           (
             order %
             4
@@ -337,7 +364,7 @@ function updateTimeline() {
 
 
         item.style.transitionDelay =
-          `${delay}s`;
+          `${delayWithinRow}s`;
 
 
         item.classList.add(
@@ -352,71 +379,73 @@ function updateTimeline() {
 }
 
 
-/* ========================================
-   ACTIVE NAVIGATION
-======================================== */
 
-const sections =
-  document.querySelectorAll(
-    "#about, #portfolio, #journey"
+/* =========================================
+   MOBILE TIMELINE
+========================================= */
+
+function updateMobileTimeline() {
+
+  if (
+    !timelineVisual
+  ) {
+    return;
+  }
+
+
+  const rect =
+    timelineVisual
+      .getBoundingClientRect();
+
+
+  const viewportHeight =
+    window.innerHeight;
+
+
+  const total =
+    rect.height +
+    viewportHeight *
+    0.5;
+
+
+  const progress =
+    clamp(
+      (
+        viewportHeight *
+        0.8 -
+        rect.top
+      ) /
+      total,
+      0,
+      1
+    );
+
+
+  timelineVisual.style.setProperty(
+    "--mobile-progress",
+    progress
   );
 
 
-const navLinks =
-  document.querySelectorAll(
-    ".nav-link"
-  );
+  timelineItems.forEach(
+    (item, index) => {
 
+      const revealAt =
+        index /
+        timelineItems.length *
+        0.85;
 
-function updateNavigation() {
-
-  const scrollPosition =
-    window.scrollY +
-    200;
-
-
-  let current =
-    "about";
-
-
-  sections.forEach(
-    (section) => {
 
       if (
-        scrollPosition >=
-        section.offsetTop
+        progress >= revealAt
       ) {
 
-        current =
-          section.id;
-
-      }
-
-    }
-  );
+        item.style.transitionDelay =
+          "0s";
 
 
-  navLinks.forEach(
-    (link) => {
-
-      link.classList.remove(
-        "active"
-      );
-
-
-      const href =
-        link.getAttribute(
-          "href"
-        );
-
-
-      if (
-        href ===
-        `#${current}`
-      ) {
-
-        link.classList.add(
-          "active"
+        item.classList.add(
+          "visible"
         );
 
       }
@@ -427,18 +456,111 @@ function updateNavigation() {
 }
 
 
-/* ========================================
-   SCROLL
-======================================== */
+
+function updateTimeline() {
+
+  if (
+    window.innerWidth <= 768
+  ) {
+
+    updateMobileTimeline();
+
+  } else {
+
+    updateDesktopTimeline();
+
+  }
+
+}
+
+
+
+/* =========================================
+   ACTIVE NAV
+========================================= */
+
+const navLinks =
+  Array.from(
+    document.querySelectorAll(
+      ".nav-link"
+    )
+  );
+
+
+const sections = [
+  document.getElementById(
+    "about"
+  ),
+  document.getElementById(
+    "portfolio"
+  ),
+  document.getElementById(
+    "journey"
+  )
+];
+
+
+function updateNav() {
+
+  const currentY =
+    window.scrollY +
+    260;
+
+
+  let activeIndex = 0;
+
+
+  sections.forEach(
+    (section, index) => {
+
+      if (!section) {
+        return;
+      }
+
+
+      if (
+        currentY >=
+        section.offsetTop
+      ) {
+
+        activeIndex =
+          index;
+
+      }
+
+    }
+  );
+
+
+  navLinks.forEach(
+    (link, index) => {
+
+      link.classList.toggle(
+        "active",
+        index === activeIndex
+      );
+
+    }
+  );
+
+}
+
+
+
+/* =========================================
+   SCROLL LOOP
+========================================= */
 
 let ticking = false;
 
 
 function updateEffects() {
 
-  updateParallax();
+  updateHeroParallax();
+
   updateTimeline();
-  updateNavigation();
+
+  updateNav();
 
   ticking = false;
 
@@ -482,6 +604,7 @@ window.addEventListener(
   () => {
 
     setupTimeline();
+
     updateEffects();
 
   }
