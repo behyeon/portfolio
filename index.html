@@ -2,7 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>BE HYEON</title>
 
@@ -17,312 +21,395 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <div class="page">
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <!-- HEADER -->
-    <header class="header">
+  <header class="site-header">
 
-      <div class="header-inner">
+    <div class="header-inner">
 
-        <a href="#top" class="logo">
+      <a
+        href="#top"
+        class="logo"
+        aria-label="BE HYEON Home"
+      >
 
-          <div class="logo-top">
-            <span class="logo-be">BE</span>
-            <span class="logo-line"></span>
-          </div>
+        <div class="logo-top">
+          <span class="logo-be">BE</span>
+          <span class="logo-line"></span>
+        </div>
 
-          <span class="logo-hyeon">HYEON</span>
+        <span class="logo-hyeon">
+          HYEON
+        </span>
 
+      </a>
+
+
+      <button
+        class="mobile-menu-button"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <nav class="nav">
+
+        <a
+          href="#about"
+          class="nav-link active"
+          data-label="About me"
+        >
+          <span>About me</span>
         </a>
 
+        <span class="nav-divider">
+          ｜
+        </span>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="메뉴 열기"
-          aria-expanded="false"
+        <a
+          href="#portfolio"
+          class="nav-link"
+          data-label="Portfolio"
         >
-          <span></span>
-          <span></span>
-        </button>
+          <span>Portfolio</span>
+        </a>
+
+        <span class="nav-divider">
+          ｜
+        </span>
+
+        <a
+          href="#journey"
+          class="nav-link"
+          data-label="Contact me"
+        >
+          <span>Contact me</span>
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
 
 
-        <nav class="nav">
 
-          <a href="#about" class="nav-link active" data-text="About me">
-            <span>About me</span>
-          </a>
+  <main id="top">
 
-          <span class="nav-divider">｜</span>
 
-          <a href="#portfolio" class="nav-link" data-text="Portfolio">
-            <span>Portfolio</span>
-          </a>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-          <span class="nav-divider">｜</span>
+    <section class="hero">
 
-          <a href="#journey" class="nav-link" data-text="Contact me">
-            <span>Contact me</span>
-          </a>
+      <h1 class="hero-title reveal">
+        READ SITUATION,<br>
+        TAKE RIGHT ROLE,<br>
+        MAKE DESIGN WORK
+      </h1>
 
-        </nav>
+
+      <div class="hero-copy-wrap reveal">
+
+        <p class="hero-copy">
+          각 프로젝트의 조건과 목적을 파악하고,<br>
+          그 안에서 가장 필요한 역할을 찾고,
+          실제로 작동하는 디자인으로 연결합니다.
+        </p>
 
       </div>
 
-    </header>
+    </section>
 
 
-    <main id="top">
 
-      <!-- HERO -->
-      <section class="hero">
+    <!-- =========================
+         FULL WIDTH IMAGE
+    ========================== -->
 
-        <h1 class="hero-title fade-in-up">
-          READ SITUATION,<br>
-          TAKE RIGHT ROLE,<br>
-          MAKE DESIGN WORK
-        </h1>
+    <section class="hero-image-section">
+
+      <img
+        src="hero.png"
+        alt="DESIGN visual"
+        class="hero-image"
+      >
+
+    </section>
 
 
-        <div class="hero-sub-wrap fade-in-up">
 
-          <p class="hero-sub">
-            각 프로젝트의 조건과 목적을 파악하고,<br>
-            그 안에서 가장 필요한 역할을 찾고,
-            실제로 작동하는 디자인으로 연결합니다.
-          </p>
+    <!-- =========================
+         ABOUT TITLE
+    ========================== -->
+
+    <section
+      class="about-title-section"
+      id="about"
+    >
+
+      <h2 class="reveal">
+        About me
+      </h2>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about-section">
+
+      <div class="about-copy">
+
+        <div class="about-intro reveal">
+
+          <span class="pill">
+            What is BE_HYEON ?
+          </span>
+
+
+          <div class="about-heading-group">
+
+            <h3>
+              Be in the Right Place
+            </h3>
+
+            <p>
+              안녕하십니까, 분명한 이유로 존재하는 이다현 입니다
+            </p>
+
+          </div>
 
         </div>
 
-      </section>
+
+        <p class="about-description reveal">
+          BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
+          저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라, 상황을 읽고 지금 필요한
+          역할이 무엇인지 찾는 사람이고자 합니다. 때로는 방향을 잡고, 때로는 흐름을 정리하며,
+          필요한 순간에는 디테일까지 챙깁니다. 어디에 있든 이유 없이 존재하지 않고,
+          필요한 자리에 분명한 역할을 해내는 것. 그것이 BE HYEON이 담고 있는
+          저의 디자인 태도입니다.
+        </p>
+
+      </div>
 
 
-      <!-- FULL WIDTH IMAGE -->
-      <section class="hero-visual">
+      <div class="profile-card reveal">
 
         <img
-          src="hero.png"
-          alt="Design visual"
-          class="hero-visual-image"
+          src="profile.png"
+          alt="Profile"
         >
 
-      </section>
+      </div>
+
+    </section>
 
 
-      <!-- ABOUT TITLE -->
-      <section class="about-heading" id="about">
 
-        <h2 class="fade-in-up">
-          About me
+    <!-- =========================
+         STRENGTH
+    ========================== -->
+
+    <section
+      class="strength-section"
+      id="portfolio"
+    >
+
+      <div class="section-heading reveal">
+
+        <span class="pill pill-bold">
+          What Do I Best?
+        </span>
+
+        <h2>
+          디자인 안에서 발휘되는 강점
         </h2>
 
-      </section>
+      </div>
 
 
-      <!-- ABOUT -->
-      <section class="about">
+      <div class="strength-grid">
 
-        <div class="about-text">
+        <div class="strength-row">
 
-          <div class="about-intro fade-in-up">
+          <article class="strength-card card-small reveal">
 
-            <span class="tag">
-              What is BE_HYEON ?
-            </span>
+            <img
+              src="skill-analysis.png"
+              alt="자료수집 및 분석"
+            >
 
-
-            <div class="about-title-group">
-
-              <h3>
-                Be in the Right Place
-              </h3>
-
-              <p>
-                안녕하십니까, 분명한 이유로 존재하는 이다현 입니다
-              </p>
-
-            </div>
-
-          </div>
+          </article>
 
 
-          <p class="about-description fade-in-up">
-            BE HYEON은 '~이다'를 뜻하는 be동사와, 제 이름 HYEON을 결합한 이름입니다.
-            저는 디자인 안에서 단순히 자리를 채우는 사람이 아니라, 상황을 읽고 지금 필요한
-            역할이 무엇인지 찾는 사람이고자 합니다. 때로는 방향을 잡고, 때로는 흐름을 정리하며,
-            필요한 순간에는 디테일까지 챙깁니다. 어디에 있든 이유 없이 존재하지 않고,
-            필요한 자리에 분명한 역할을 해내는 것. 그것이 BE HYEON이 담고 있는
-            저의 디자인 태도입니다.
-          </p>
+          <article class="strength-card card-large reveal">
+
+            <img
+              src="skill-planning.png"
+              alt="디자인 기획"
+            >
+
+          </article>
 
         </div>
 
 
-        <div class="about-image fade-in-up">
+        <div class="strength-row">
 
-          <img
-            src="profile.png"
-            alt="Profile"
-          >
+          <article class="strength-card card-large reveal">
 
-        </div>
+            <img
+              src="skill-visual.png"
+              alt="정보 시각화 및 전달"
+            >
 
-      </section>
+          </article>
 
 
-      <!-- STRENGTHS -->
-      <section class="strengths" id="portfolio">
+          <article class="strength-card card-small reveal">
 
-        <div class="section-title fade-in-up">
+            <img
+              src="skill-multi.png"
+              alt="다양한 디자인 역량"
+            >
 
-          <span class="tag tag-bold">
-            What Do I Best?
-          </span>
-
-          <h2>
-            디자인 안에서 발휘되는 강점
-          </h2>
+          </article>
 
         </div>
 
+      </div>
 
-        <div class="cards">
-
-          <div class="cards-row">
-
-            <article class="skill-card skill-small fade-in-up">
-              <img
-                src="skill-analysis.png"
-                alt="자료수집 및 분석"
-              >
-            </article>
+    </section>
 
 
-            <article class="skill-card skill-large fade-in-up">
-              <img
-                src="skill-planning.png"
-                alt="디자인 기획"
-              >
-            </article>
 
-          </div>
+    <!-- =========================
+         WORK JOURNEY
+    ========================== -->
 
+    <section
+      class="journey-section"
+      id="journey"
+    >
 
-          <div class="cards-row">
+      <div class="section-heading reveal">
 
-            <article class="skill-card skill-large fade-in-up">
-              <img
-                src="skill-visual.png"
-                alt="정보 시각화 및 전달"
-              >
-            </article>
+        <span class="pill pill-bold">
+          Work Journey
+        </span>
 
+        <h2>
+          경험을 쌓아온 과정과 흐름
+        </h2>
 
-            <article class="skill-card skill-small fade-in-up">
-              <img
-                src="skill-multi.png"
-                alt="다양한 디자인 역량"
-              >
-            </article>
-
-          </div>
-
-        </div>
-
-      </section>
+      </div>
 
 
-      <!-- WORK JOURNEY -->
-      <section class="journey" id="journey">
+      <!--
+        이 shell의 높이가 실제 스크롤 여유를 만듭니다.
+        내부 timeline-visual은 스크롤 도중 잠시 고정됩니다.
+      -->
 
-        <div class="section-title fade-in-up">
+      <div class="timeline-shell">
 
-          <span class="tag tag-bold">
-            Work Journey
-          </span>
+        <div class="timeline-visual">
 
-          <h2>
-            경험을 쌓아온 과정과 흐름
-          </h2>
-
-        </div>
-
-
-        <div class="timeline">
+          <!-- S CURVE -->
 
           <svg
             class="timeline-svg"
-            viewBox="0 0 1000 550"
+            viewBox="0 0 1440 620"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
 
             <path
-              class="timeline-path-background"
+              class="timeline-path-base"
               d="
-                M182 10
-                H818
+                M 0 20
+                H 1040
 
-                C900 10
-                950 55
-                950 135
+                C 1160 20
+                  1225 85
+                  1225 150
 
-                C950 215
-                900 260
-                818 260
+                C 1225 215
+                  1160 280
+                  1040 280
 
-                H182
+                H 400
 
-                C100 260
-                50 305
-                50 385
+                C 280 280
+                  215 345
+                  215 410
 
-                C50 465
-                100 510
-                182 510
+                C 215 475
+                  280 540
+                  400 540
 
-                H818
+                H 1440
               "
             />
+
 
             <path
               class="timeline-path-progress"
               d="
-                M182 10
-                H818
+                M 0 20
+                H 1040
 
-                C900 10
-                950 55
-                950 135
+                C 1160 20
+                  1225 85
+                  1225 150
 
-                C950 215
-                900 260
-                818 260
+                C 1225 215
+                  1160 280
+                  1040 280
 
-                H182
+                H 400
 
-                C100 260
-                50 305
-                50 385
+                C 280 280
+                  215 345
+                  215 410
 
-                C50 465
-                100 510
-                182 510
+                C 215 475
+                  280 540
+                  400 540
 
-                H818
+                H 1440
               "
             />
 
           </svg>
 
 
+
+          <!-- TIMELINE ITEMS -->
+
           <div class="timeline-grid">
+
 
             <!-- ROW 1 -->
 
-            <article class="timeline-item" data-order="0">
+            <article
+              class="timeline-item"
+              data-order="0"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -337,7 +424,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="1">
+            <article
+              class="timeline-item"
+              data-order="1"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -352,7 +442,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="2">
+            <article
+              class="timeline-item"
+              data-order="2"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -367,7 +460,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="3">
+            <article
+              class="timeline-item"
+              data-order="3"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -382,9 +478,13 @@
             </article>
 
 
+
             <!-- ROW 2 -->
 
-            <article class="timeline-item" data-order="7">
+            <article
+              class="timeline-item"
+              data-order="7"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -399,7 +499,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="6">
+            <article
+              class="timeline-item"
+              data-order="6"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -414,7 +517,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="5">
+            <article
+              class="timeline-item"
+              data-order="5"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -428,7 +534,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="4">
+            <article
+              class="timeline-item"
+              data-order="4"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -443,9 +552,13 @@
             </article>
 
 
+
             <!-- ROW 3 -->
 
-            <article class="timeline-item" data-order="8">
+            <article
+              class="timeline-item"
+              data-order="8"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -460,7 +573,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="9">
+            <article
+              class="timeline-item"
+              data-order="9"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -475,7 +591,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="10">
+            <article
+              class="timeline-item"
+              data-order="10"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -490,7 +609,10 @@
             </article>
 
 
-            <article class="timeline-item" data-order="11">
+            <article
+              class="timeline-item"
+              data-order="11"
+            >
 
               <span class="timeline-dot"></span>
 
@@ -508,11 +630,21 @@
 
         </div>
 
-      </section>
+      </div>
 
-    </main>
+    </section>
 
-  </div>
+
+
+    <!--
+      타임라인 애니메이션이 완전히 끝난 후에도
+      페이지가 조금 더 내려가도록 여유 공간
+    -->
+
+    <div class="page-end-space"></div>
+
+
+  </main>
 
 
   <script src="main.js"></script>
